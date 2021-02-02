@@ -1,13 +1,17 @@
 .nav {
-  display: flex; }
+  background-color: #AAAAAA;
+  display: flex;
+  margin: 0;
+  border-bottom: 2px solid #555; }
   .nav__logo {
-    width: 32px;
-    height: 32px;
-    margin: 5px; }
+    margin: 0; }
+  .nav__user {
+    margin: 0; }
   .nav__img {
     width: 32px;
     height: 32px;
-    margin: 5px; }
+    margin: 5px 5px 5px 5px;
+    cursor: pointer; }
   .nav__search {
     margin: 10px 15px;
     font-size: 1.2rem; }
