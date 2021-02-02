@@ -14,6 +14,20 @@ class ApiController extends AbstractController
      */
     public function index(): JsonResponse
     {
-        return new JsonResponse('api');
+        $client = new \Google\Client();
+        $client->setAuthConfig('../credentials.json');
+        $client->addScope(\Google_Service_Books::BOOKS);
+
+        $service = new \Google_Service_Books($client);
+
+        $query = 'php';
+
+        $optParams = array(
+            'maxResults' => 1,
+        );
+        $results = $service->volumes->listVolumes($query, $optParams);
+
+
+        return new JsonResponse($results);
     }
 }
