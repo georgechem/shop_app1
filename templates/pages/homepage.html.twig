@@ -13,12 +13,19 @@
     {# Top Bar component #}
     {% embed 'components/top_bar.html.twig' %}
     {% endembed %}
+
+    {% if app.user is empty%}
     {# If user not logged in panel #}
     {% embed 'components/panel_user_anon.html.twig' %}
     {% endembed %}
+    {% endif %}
+
+    {% if app.user is not empty%}
     {# if user is logged #}
     {% embed 'components/panel_user_logged.html.twig' %}
     {% endembed %}
+    {% endif %}
+
     {# panel books #}
     {% embed 'components/panel_books.html.twig' %}
     {% endembed %}
