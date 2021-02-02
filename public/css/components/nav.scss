@@ -2,18 +2,19 @@
   display: flex;
   &__logo{
     margin: 5px;
-    font-size: 3rem;
-    color: #333;
+    font-size: 2.5rem;
+    color: #339;
   }
   &__search{
-    margin: 15px 5px;
+    margin: 10px 15px;
     font-size: 1.2rem;
     &--input{
       text-align: center;
       border-radius: 15px;
       min-height: 30px;
       &:focus{
-        background-color: #1b9448;
+        border: 2px groove black;
+        //background-color: #558e92;
         outline: none;
       }
     }
