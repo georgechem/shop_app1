@@ -1,0 +1,22 @@
+.nav{
+  display: flex;
+  &__logo{
+    margin: 5px;
+    font-size: 3rem;
+    color: #333;
+  }
+  &__search{
+    margin: 15px 5px;
+    font-size: 1.2rem;
+    &--input{
+      text-align: center;
+      border-radius: 15px;
+      min-height: 30px;
+      &:focus{
+        background-color: #1b9448;
+        outline: none;
+      }
+    }
+  }
+
+}

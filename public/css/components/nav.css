@@ -1,0 +1,18 @@
+.nav {
+  display: flex; }
+  .nav__logo {
+    margin: 5px;
+    font-size: 3rem;
+    color: #333; }
+  .nav__search {
+    margin: 15px 5px;
+    font-size: 1.2rem; }
+    .nav__search--input {
+      text-align: center;
+      border-radius: 15px;
+      min-height: 30px; }
+      .nav__search--input:focus {
+        background-color: #1b9448;
+        outline: none; }
+
+/*# sourceMappingURL=nav.css.map */

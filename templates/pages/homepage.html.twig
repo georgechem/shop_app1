@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/homepage.css') }}">
+    {#  Components styles #}
+    <link rel="stylesheet" href="{{ asset('css/components/nav.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    {% embed 'components/navigation.html.twig' %}
+    {% endembed %}
+
+
+{% endblock %}
+{%  block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/pages/homepage.js') }}"></script>
+{% endblock %}
