@@ -1,9 +1,13 @@
 .nav {
   display: flex; }
   .nav__logo {
-    margin: 5px;
-    font-size: 2.5rem;
-    color: #339; }
+    width: 32px;
+    height: 32px;
+    margin: 5px; }
+  .nav__img {
+    width: 32px;
+    height: 32px;
+    margin: 5px; }
   .nav__search {
     margin: 10px 15px;
     font-size: 1.2rem; }

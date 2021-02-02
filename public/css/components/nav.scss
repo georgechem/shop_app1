@@ -1,9 +1,21 @@
+$nav-icon-width: 32px;
+$nav-icon-height: 32px;
+$nav-icon-margin: 5px;
+
 .nav{
   display: flex;
   &__logo{
-    margin: 5px;
-    font-size: 2.5rem;
-    color: #339;
+    width: $nav-icon-width;
+    height: $nav-icon-height;
+    margin: $nav-icon-margin;
+  }
+  &__img{
+    width: $nav-icon-width;
+    height: $nav-icon-height;
+    margin: $nav-icon-margin;
+  }
+  &__icon{
+
   }
   &__search{
     margin: 10px 15px;
