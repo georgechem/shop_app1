@@ -10,8 +10,17 @@
 {% endblock %}
 
 {% block body %}
-
-    {% embed 'components/navigation.html.twig' %}
+    {# Top Bar component #}
+    {% embed 'components/top_bar.html.twig' %}
+    {% endembed %}
+    {# If user not logged in panel #}
+    {% embed 'components/panel_user_anon.html.twig' %}
+    {% endembed %}
+    {# if user is logged #}
+    {% embed 'components/panel_user_logged.html.twig' %}
+    {% endembed %}
+    {# panel books #}
+    {% embed 'components/panel_books.html.twig' %}
     {% endembed %}
 
 

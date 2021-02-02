@@ -1,7 +1,6 @@
 .nav {
   background-color: #AAAAAA;
   display: flex;
-  margin: 0;
   border-bottom: 2px solid #555; }
   .nav__logo {
     margin: 0; }
@@ -22,5 +21,29 @@
       .nav__search--input:focus {
         border: 2px groove black;
         outline: none; }
+
+.navUser {
+  margin: 0;
+  display: flex; }
+  .navUser__list {
+    list-style: none;
+    margin: 15px 0;
+    padding: 25px;
+    background-color: #4a4a4a;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #AAAAAA;
+    border-left: 5px double #212224; }
+    .navUser__list__item {
+      margin: 5px 0; }
+      .navUser__list__item--link {
+        font-family: Gabriola, serif;
+        font-size: 1.6rem;
+        color: #ddd;
+        text-decoration: none;
+        text-transform: capitalize; }
+
+.hidden {
+  display: none;
+  visibility: hidden; }
 
 /*# sourceMappingURL=nav.css.map */

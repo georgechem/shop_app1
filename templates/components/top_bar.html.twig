@@ -1,14 +1,13 @@
-
-{% block nav %}
 <nav id="nav" class="nav">
     <div class="nav__logo">
         <img class="nav__img" src="{{ asset('img/nav/book.svg') }}" alt="book icon">
     </div>
     <div class="nav__search">
-        <input class="nav__search--input" type="text">
+        <label>
+            <input class="nav__search--input" type="text" name="search" placeholder="Search">
+        </label>
     </div>
     <div class="nav__user">
         <img class="nav__img" src="{{ asset('img/nav/user.svg') }}" alt="user icon">
     </div>
 </nav>
-{% endblock %}
