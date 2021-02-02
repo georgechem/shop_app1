@@ -1,6 +1,9 @@
 .nav {
+  opacity: 1;
   background-color: #AAAAAA;
   display: flex;
+  border-left: 3px double #ddd;
+  border-right: 3px double #ddd;
   border-bottom: 2px solid #555; }
   .nav__logo {
     margin: 0; }
@@ -23,6 +26,7 @@
         outline: none; }
 
 .navUser {
+  opacity: 1;
   margin: 0;
   display: flex; }
   .navUser__list {
@@ -31,7 +35,7 @@
     padding: 25px;
     background-color: #4a4a4a;
     border-radius: 0 10px 10px 0;
-    border: 1px solid #AAAAAA;
+    border: 3px double #AAAAAA;
     border-left: 5px double #212224; }
     .navUser__list__item {
       margin: 5px 0; }
