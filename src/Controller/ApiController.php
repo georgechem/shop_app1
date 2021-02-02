@@ -20,20 +20,20 @@ class ApiController extends AbstractController
 
         $service = new \Google_Service_Books($client);
 
-        $query = 'book';
+        $query = 'php';
 
         $optParams = array(
             'startIndex' => 1,
-            'maxResults' => 1,
+            'maxResults' => 2,
             'filter'=>'ebooks'
         );
         $results = $service->volumes->listVolumes($query, $optParams);
-        $data =null;
-        if(true){
-            $data = $results->items[0]->selfLink;
-        }else{
-            $data = $results;
+        $data = [];
+        foreach ($results->items as $result){
+            $data[] = $result->selfLink;
         }
+        //$data = $results->items[0]->selfLink;
+
 
         $opts = array(
             'http'=>array(
@@ -41,9 +41,12 @@ class ApiController extends AbstractController
             )
         );
         $context = stream_context_create($opts);
+        $test = [];
+        foreach ($data as $part){
+            $test[] = json_decode(file_get_contents($part, false, $context));
 
-        $test = file_get_contents($data, false, $context);
+        }
 
-        return new JsonResponse(json_decode($test));
+        return new JsonResponse($test);
     }
 }
