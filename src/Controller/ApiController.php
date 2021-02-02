@@ -24,16 +24,15 @@ class ApiController extends AbstractController
 
         $optParams = array(
             'startIndex' => 1,
-            'maxResults' => 2,
+            'maxResults' => 1,
             'filter'=>'ebooks'
         );
         $results = $service->volumes->listVolumes($query, $optParams);
         $data = [];
+
         foreach ($results->items as $result){
             $data[] = $result->selfLink;
         }
-        //$data = $results->items[0]->selfLink;
-
 
         $opts = array(
             'http'=>array(
@@ -43,7 +42,7 @@ class ApiController extends AbstractController
         $context = stream_context_create($opts);
         $test = [];
         foreach ($data as $part){
-            $test[] = json_decode(file_get_contents($part, false, $context));
+            $test[] = json_decode(file_get_contents($part, false, $context), false, 512);
 
         }
 
