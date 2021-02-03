@@ -13,6 +13,7 @@ $bp-desktop: 1100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     @media (max-width: $bp-mobile){
       flex-direction: column;
     }
@@ -20,14 +21,17 @@ $bp-desktop: 1100px;
     background-color: #3c5e91;
     border-radius: 15px;
     //border: 1px solid white;
-
+    &__main{
+      position: relative;
+      margin: 5px;
+    }
     &__img{
       margin: 5px 5px 0 5px;
       padding: 10px;
       background-color: #AAAAAA;
       border-radius: 15px;
       border: 1px solid #222;
-      width: 192px;
+      width: 164px;
     }
     &__title{
       border: 1px solid #222;

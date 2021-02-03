@@ -8,19 +8,23 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     padding: 20px;
     background-color: #3c5e91;
     border-radius: 15px; }
     @media (max-width: 380px) {
       .latest__content {
         flex-direction: column; } }
+    .latest__content__main {
+      position: relative;
+      margin: 5px; }
     .latest__content__img {
       margin: 5px 5px 0 5px;
       padding: 10px;
       background-color: #AAAAAA;
       border-radius: 15px;
       border: 1px solid #222;
-      width: 192px; }
+      width: 164px; }
     .latest__content__title {
       border: 1px solid #222;
       font-family: Gabriola, serif;

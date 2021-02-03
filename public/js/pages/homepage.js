@@ -1,8 +1,22 @@
 // API Query
 let counter = 1;
 let start = 1;
-let total = 5;
+let width = window.innerWidth;
+let total = 1;
+if(width > 500 && width <= 700){
+    total = 2;
+}
+else if(width > 700 && width <= 870){
+    total = 3;
+}
+else if(width > 870 && width <= 1100){
+    total = 4;
+}else if(width > 1100){
+    total = 5;
+}
+console.log(width);
 let oldChildren = [];
+
 
 // DOM elements
 let latestContent = document.getElementById('latestContent');
@@ -28,7 +42,7 @@ let getBooks = function(start, total){
             data.forEach((item)=>{
                 // generate main content element <div>
                 let mainContent = document.createElement('div');
-                mainContent.style.position = 'relative';
+                mainContent.classList.add('latest__content__main');
                 // generate <img> element & fill with content from API
                 let imgObject = document.createElement('img');
                 imgObject.classList.add('latest__content__img');
@@ -47,7 +61,7 @@ let getBooks = function(start, total){
                 latestContent.appendChild(mainContent);
                 oldChildren.push(mainContent);
 
-                console.log(item);
+                //console.log(item);
             })
             //latestContentImg[0].src = data[0].volumeInfo.imageLinks.thumbnail;
         });
