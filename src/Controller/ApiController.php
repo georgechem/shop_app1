@@ -30,7 +30,6 @@ class ApiController extends AbstractController
         $optParams = array(
             'startIndex' => $route_params['start'],
             'maxResults' => $route_params['max'],
-            'filter'=>'ebooks'
         );
         $results = $service->volumes->listVolumes($query, $optParams);
         $data = [];
