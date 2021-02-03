@@ -19,6 +19,19 @@ $nav-icon-margin: 5px 5px 5px 5px;
     margin: 0;
   }
   &__cart{
+    &__value{
+      padding: 0 6px;
+      opacity: 0.8;
+      font-family: "Cambria Math",serif;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      //font-weight: bolder;
+      color: darkgreen;
+      position: absolute;
+      right: 40px;
+      top:8px;
+    }
     &__img{
       position: absolute;
       width: $nav-icon-width;
