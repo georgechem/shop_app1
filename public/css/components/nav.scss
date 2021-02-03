@@ -2,7 +2,9 @@ $nav-icon-width: 32px;
 $nav-icon-height: 32px;
 $nav-icon-margin: 5px 5px 5px 5px;
 
+
 .nav{
+  position: relative;
   z-index: 100;
   opacity: 1;
   background-color: #AAAAAA;
@@ -15,6 +17,16 @@ $nav-icon-margin: 5px 5px 5px 5px;
   }
   &__user{
     margin: 0;
+  }
+  &__cart{
+    &__img{
+      position: absolute;
+      width: $nav-icon-width;
+      height: $nav-icon-height;
+      cursor: pointer;
+      top: 7px;
+      right: 5px;
+    }
   }
   &__img{
     width: $nav-icon-width;
