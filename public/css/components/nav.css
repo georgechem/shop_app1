@@ -1,4 +1,5 @@
 .nav {
+  z-index: 100;
   opacity: 1;
   background-color: #AAAAAA;
   display: flex;
@@ -26,6 +27,8 @@
         outline: none; }
 
 .navUser {
+  z-index: 100;
+  position: absolute;
   opacity: 1;
   margin: 0;
   display: flex; }
@@ -45,6 +48,8 @@
         color: #ddd;
         text-decoration: none;
         text-transform: capitalize; }
+        .navUser__list__item--link:active {
+          color: orangered; }
 
 .hidden {
   display: none;

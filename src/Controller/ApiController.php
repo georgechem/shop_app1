@@ -12,11 +12,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApiController extends AbstractController
 {
     /**
-     * @Route("/googleBooks/{query}/{start}/{max}", name="app_google_books", requirements={"query"="[a-zA-Z0-9]+", "start"="\d+", "max"="\d{1,2}"}, methods={"GET"})
-     *
-     *
-     *
-     *
+     * @Route("/googleBooks/{start}/{max}/{query}", name="app_google_books", requirements={"query"="[a-zA-Z0-9?=\+\-]+",
+     *     "start"="\d+", "max"="\d{1,2}"}, methods={"GET"})
      */
     public function index(Request $request): JsonResponse
     {
