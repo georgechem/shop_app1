@@ -2,17 +2,18 @@
 let counter = 1;
 let start = 1;
 let total = 5;
-let status = true;
 let oldChildren = [];
 
-let booksApi = `https://localhost:8000/googleBooks/${start}/${total}/php`;
 // DOM elements
 let latestContent = document.getElementById('latestContent');
 // controls
 let latestLeft = document.getElementById('latestLeft');
 let latestRight = document.getElementById('latestRight');
-
-let getBooks = function(start, total, status){
+/**
+ * when on production should be
+ * https://www.serverapp.eu/public/index.php/googleBooks/...
+  */
+let getBooks = function(start, total){
     fetch(`https://localhost:8000/googleBooks/${start}/${total}/subject=web+intitle=php`)
         .then((response)=>{
             return response.json();
@@ -51,10 +52,18 @@ let getBooks = function(start, total, status){
             //latestContentImg[0].src = data[0].volumeInfo.imageLinks.thumbnail;
         });
 }
-getBooks(start, total, status);
+getBooks(start, total);
 latestRight.addEventListener('click', function(){
         counter = start + total;
         start = counter;
-        getBooks(start, total, status);
+        getBooks(start, total);
 });
 
+latestLeft.addEventListener('click', function(){
+    counter = start - total;
+    start = counter;
+    if(start < 1){
+        start = 1;
+    }
+    getBooks( start, total);
+});
