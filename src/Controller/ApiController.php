@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Book;
 use Google\Client;
 use Google_Service_Books;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -54,10 +55,20 @@ class ApiController extends AbstractController
          * Write here writing data to database and save files to certain location
          */
         //dd($test[0]->volumeInfo->industryIdentifiers[1]->identifier);
+        foreach($test as $volume){
+            $book = new Book();
+            $book->setBookId($volume->id);
+            $book->setEtag($volume->etag ?? 'no_etag');
+            $book->setSelfLink($volume->selfLink ?? 'https://');
+            $book->setEpub($volume->accessInfo->epub->isAvailable ?? 'false');
+            $book->setPdf($volume->accessInfo->pdf->isAvailable ?? 'false');
+            $book->setPrice($volume->saleInfo->listPrice->amount ?? 0.0);
+            $book->setCurrencyCode($volume->saleInfo->listPrice->currencyCode ?? 'EUR');
+            $book->setBuyLink($volume->saleInfo->buyLink ?? 'https://');
 
-        foreach($test as $book){
-            $title = $book->id;
-            $url = $book->volumeInfo->imageLinks->thumbnail ?? 'noSmallImage';
+            dd($volume);
+            $title = $volume->id;
+            $url = $volume->volumeInfo->imageLinks->thumbnail ?? 'noSmallImage';
             if ($url === 'noSmallImage'){
                 continue;
             }
