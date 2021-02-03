@@ -50,6 +50,24 @@ class ApiController extends AbstractController
             $test[] = json_decode(file_get_contents($part, false, $context), false, 512);
 
         }
+        /**
+         * Write here writing data to database and save files to certain location
+         */
+        //dd($test[0]->volumeInfo->industryIdentifiers[1]->identifier);
+
+        foreach($test as $book){
+            $title = $book->id;
+            $url = $book->volumeInfo->imageLinks->thumbnail ?? 'noSmallImage';
+            if ($url === 'noSmallImage'){
+                continue;
+            }
+            $file = file_get_contents($url, false, $context);
+            file_put_contents("books/".$title.".png", $file, 0, $context);
+        }
+        //$title = $test[0]->volumeInfo->industryIdentifiers[1]->identifier;
+        //$url = $test[0]->volumeInfo->imageLinks->small;
+        //$file = file_get_contents($url, false, $context);
+        //file_put_contents("books/".$title.".png", $file, 0, $context);
 
         return new JsonResponse($test);
     }

@@ -47,7 +47,7 @@ let getBooks = function(start, total){
                 latestContent.appendChild(mainContent);
                 oldChildren.push(mainContent);
 
-                //console.log(imgObject);
+                console.log(item);
             })
             //latestContentImg[0].src = data[0].volumeInfo.imageLinks.thumbnail;
         });
