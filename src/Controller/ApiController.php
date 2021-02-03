@@ -2,29 +2,37 @@
 
 namespace App\Controller;
 
+use Google\Client;
+use Google_Service_Books;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ApiController extends AbstractController
 {
     /**
-     * @Route("/googleBooks", name="app_google_books", methods={"GET", "HEAD"})
+     * @Route("/googleBooks/{query}/{start}/{max}", name="app_google_books", requirements={"query"="[a-zA-Z0-9]+", "start"="\d+", "max"="\d{1,2}"}, methods={"GET"})
+     *
+     *
+     *
+     *
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $client = new \Google\Client();
+        $route_params = $request->attributes->get('_route_params');
+
+        $client = new Client();
         $client->setAuthConfig('../credentials.json');
-        $client->addScope(\Google_Service_Books::BOOKS);
+        $client->addScope(Google_Service_Books::BOOKS);
 
-        $service = new \Google_Service_Books($client);
+        $service = new Google_Service_Books($client);
 
-        $query = 'php';
+        $query = $route_params['query'];
 
         $optParams = array(
-            'startIndex' => 1,
-            'maxResults' => 1,
+            'startIndex' => $route_params['start'],
+            'maxResults' => $route_params['max'],
             'filter'=>'ebooks'
         );
         $results = $service->volumes->listVolumes($query, $optParams);
@@ -39,6 +47,7 @@ class ApiController extends AbstractController
                 'method'=>"GET",
             )
         );
+
         $context = stream_context_create($opts);
         $test = [];
         foreach ($data as $part){
