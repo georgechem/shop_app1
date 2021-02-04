@@ -1,0 +1,30 @@
+{# book #}
+<div class="window">
+    <div class="window__bar">Title: {{ book.title }}
+        <img class="window__bar__img" src="{{ asset('img/nav/crossoctagon.svg') }}">
+    </div>
+    <div class="window__content">
+        <div class="window__content__title content line">Authors:
+        {% for author in book.authors %}
+            <span class="window__content__title content">{{ author }}</span>
+            <span class="window__content__title content">{% if not loop.last %},{% endif %}</span>
+        {% endfor %}
+            </div>
+        <div class="content number">
+            Published {{ book.publishedDate }}
+        </div>
+        <div class="center">
+            <img class="" src="{{ book.imageLink }}{{ book.bookId }}.png">
+        </div>
+        <div class="content center">
+            Price: <span class="max">{{ book.price }}</span>{{ book.currencyCode }}
+        </div>
+        <span class="content">
+            Page Count: {{ book.pageCount }} pages, publisher: {{ book.publisher }}
+        </span>
+        <div class="content m10">
+            {{ book.description|striptags }}
+        </div>
+    </div>
+
+</div>

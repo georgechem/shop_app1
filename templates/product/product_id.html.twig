@@ -4,9 +4,9 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/components/product_id.css') }}">
     {#  Components styles #}
     <link rel="stylesheet" href="{{ asset('css/components/nav.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/components/product_id.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -29,7 +29,11 @@
     {# panel books #}
     {% embed 'components/nav/panel_books.html.twig' %}
     {% endembed %}
-    
+
+    {# product component #}
+    {% embed 'components/product/product_component.html.twig' %}
+    {% endembed %}
+
 
 
 

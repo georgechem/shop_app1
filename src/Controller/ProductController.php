@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Book;
 use App\Repository\BookRepository;
 use App\Service\CategoryExtractor;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -33,9 +35,19 @@ class ProductController extends AbstractController
     /**
      * @Route("/product/{id}", name="app_product", requirements={"id"="[a-zA-Z0-9\-\+_]+"})
      */
-    public function productId():Response
+    public function productId(Request $request):Response
     {
+        $route_params = $request->attributes->get('_route_params');
+        $bookId = $route_params['id'];
 
-        return $this->render('product/product_id.html.twig',[]);
+        $book = $this->getDoctrine()
+            ->getRepository(Book::class)
+            ->findOneBy([
+                'book_id'=>$bookId,
+            ]);
+
+        return $this->render('product/product_id.html.twig',[
+            'book'=>$book,
+        ]);
     }
 }

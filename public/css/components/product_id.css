@@ -1,4 +1,48 @@
 body {
   background-color: #646ea5; }
 
+.window {
+  margin-top: 40px;
+  max-width: 760px;
+  border: 3px ridge #479; }
+  .window__bar {
+    font-family: Gabriola, serif;
+    font-size: 1.5rem;
+    border: 2px ridge #974;
+    background-color: #AAAAAA;
+    position: relative;
+    padding: 0 25px 0 5px; }
+    .window__bar__img {
+      opacity: 0.8;
+      top: 7px;
+      right: 0;
+      position: absolute;
+      width: 28px; }
+  .window__content {
+    background-color: #dddddd;
+    padding: 5px; }
+    .window__content__title {
+      margin: 2px; }
+
+.content {
+  margin: 3px 5px;
+  font-family: Gabriola, serif;
+  font-size: 1.2rem; }
+
+.number {
+  font-size: 1.5rem; }
+
+.line {
+  border-bottom: 1px solid black; }
+
+.center {
+  text-align: center; }
+
+.max {
+  font-size: 2rem; }
+
+.m10 {
+  margin-left: 10px;
+  margin-right: 10px; }
+
 /*# sourceMappingURL=product_id.css.map */
