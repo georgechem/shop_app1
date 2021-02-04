@@ -1,3 +1,12 @@
 <div class="panel">
-{{ test }}
+      {% set c = 1 %}
+{% for category in categories %}
+      {% if c % 4 == 0 %}
+           <br>
+      {% endif %}
+            <span id="category{{ c }}" class="panel__category">{{ category }}</span>
+
+      {% set c = c + 1 %}
+
+{% endfor %}
 </div>

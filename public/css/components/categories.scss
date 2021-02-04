@@ -1,3 +1,25 @@
 .panel {
-  border: 1px solid white;
+  background-color: #3a708a;
+  margin-top: 20px;
+  padding:5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 3px ridge #3a708a;
+  width:90%;
+  border-radius: 10px;
+  &__category{
+    border-radius: 10px;
+    font-family: Gabriola, serif;
+    font-size: 1.3rem;
+    margin: 7px 5px;
+    padding: 7px 8px 2px 8px;
+    text-transform: capitalize;
+    background-color: #dddddd;
+    cursor: pointer;
+    &:hover{
+      background-color: #333;
+      color: #ddd;
+    }
+  }
 }

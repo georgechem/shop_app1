@@ -16,15 +16,14 @@ class PagesController extends AbstractController
     public function index(BookRepository $repository): Response
     {
         $raw_data = $repository->getCategories();
-
         $categories = new CategoryExtractor($raw_data);
+        $results = $categories->getMainCategories();
 
-        dd($categories);
 
-        $test = 1;
+        $book = $repository->getBooksByCategory(1, 10, $results[10]);
 
         return $this->render('pages/homepage.html.twig', [
-            'test' => $test,
+            'categories' => $results,
         ]);
     }
 }
