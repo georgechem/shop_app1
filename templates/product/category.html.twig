@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+     <link rel="stylesheet" href="{{ asset('css/product/category.css') }}">
+    {#  Components styles #}
+    <link rel="stylesheet" href="{{ asset('css/components/nav.css') }}">
+{% endblock %}
+
+{% block body %}
+    {# Top Bar component #}
+    {% embed 'components/nav/top_bar.html.twig' %}
+    {% endembed %}
+
+    {% if app.user is empty%}
+        {# If user not logged in panel #}
+        {% embed 'components/nav/panel_user_anon.html.twig' %}
+        {% endembed %}
+    {% endif %}
+
+    {% if app.user is not empty%}
+        {# if user is logged #}
+        {% embed 'components/nav/panel_user_logged.html.twig' %}
+        {% endembed %}
+    {% endif %}
+
+    {# panel books #}
+    {% embed 'components/nav/panel_books.html.twig' %}
+    {% endembed %}
+
+
+
+
+
+
+{% endblock %}
+{%  block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/components/nav.js') }}"></script>
+
+{% endblock %}
