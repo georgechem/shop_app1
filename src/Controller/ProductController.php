@@ -29,4 +29,13 @@ class ProductController extends AbstractController
             'category_list'=>$results,
         ]);
     }
+
+    /**
+     * @Route("/product/{id}", name="app_product", requirements={"id"="[a-zA-Z0-9\-\+_]+"})
+     */
+    public function productId():Response
+    {
+
+        return $this->render('product/product_id.html.twig',[]);
+    }
 }
