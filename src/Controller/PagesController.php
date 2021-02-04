@@ -13,8 +13,10 @@ class PagesController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('pages/homepage.html.twig', [
+        $test = 1;
 
+        return $this->render('pages/homepage.html.twig', [
+            'test' => $test,
         ]);
     }
 }

@@ -8,6 +8,7 @@
     {#  Components styles #}
     <link rel="stylesheet" href="{{ asset('css/components/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components/latest.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/components/categories.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -34,6 +35,11 @@
     {# panel books #}
     {% embed 'components/latest/latest.html.twig' %}
     {% endembed %}
+
+    {# panel categories #}
+    {% embed 'components/categories/categories.html.twig' %}
+    {% endembed %}
+
 
 
 {% endblock %}
