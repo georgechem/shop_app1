@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Controller;
-
 use App\Entity\Book;
 use Google\Client;
 use Google_Service_Books;
@@ -54,9 +53,16 @@ class ApiController extends AbstractController
         /**
          * Write here writing data to database and save files to certain location
          */
-        //dd($test[0]->volumeInfo->industryIdentifiers[1]->identifier);
+        // get Entity Manager
+        $em = $this->getDoctrine()->getManager();
+
         foreach($test as $volume){
+
+
+            /*
+            // new book
             $book = new Book();
+            // headers properties
             $book->setBookId($volume->id);
             $book->setEtag($volume->etag ?? 'no_etag');
             $book->setSelfLink($volume->selfLink ?? 'https://');
@@ -65,21 +71,41 @@ class ApiController extends AbstractController
             $book->setPrice($volume->saleInfo->listPrice->amount ?? 0.0);
             $book->setCurrencyCode($volume->saleInfo->listPrice->currencyCode ?? 'EUR');
             $book->setBuyLink($volume->saleInfo->buyLink ?? 'https://');
+            // volume properties
+            $book->setTitle($volume->volumeInfo->title);
+            $book->setSubtitle($volume->volumeInfo->subtitle ?? 'no_subtitle');
+            $book->setAuthors($volume->volumeInfo->authors ?? []);
+            $book->setPublisher($volume->volumeInfo->publisher ?? 'no_publisher');
+            $book->setPublishedDate($volume->volumeInfo->publishedDate ?? 'not_published');
+            $book->setDescription($volume->volumeInfo->description ?? 'no_description');
+            $book->setPageCount($volume->volumeInfo->pageCount ?? 0);
+            $book->setCategories($volume->volumeInfo->categories ?? ['other']);
+            $book->setContentVersion($volume->volumeInfo->contentVersion ?? '1.0.0');
+            $book->setLanguage($volume->volumeInfo->language ?? 'en-us');
+            $book->setImageLink('/books/');
+            $title = $book->getBookId();
+            */
 
-            dd($volume);
-            $title = $volume->id;
-            $url = $volume->volumeInfo->imageLinks->thumbnail ?? 'noSmallImage';
-            if ($url === 'noSmallImage'){
+            $title = $volume->volumeInfo->title;
+            $url = $volume->volumeInfo->imageLinks->thumbnail ?? 'no_image';
+            if ($url === 'no_image'){
                 continue;
             }
             $file = file_get_contents($url, false, $context);
             file_put_contents("books/".$title.".png", $file, 0, $context);
+            //$em->persist($book);
         }
-        //$title = $test[0]->volumeInfo->industryIdentifiers[1]->identifier;
-        //$url = $test[0]->volumeInfo->imageLinks->small;
-        //$file = file_get_contents($url, false, $context);
-        //file_put_contents("books/".$title.".png", $file, 0, $context);
+        //$em->flush();
 
         return new JsonResponse($test);
+    }
+
+    /**
+     * @Route("/myBooks/{start}/{max}/{query}", name="app_my_books", methods={"GET"},
+     *     requirements={"query"="[a-zA-Z0-9?=\+\-]+", "start"="\d+", "max"="\d{1,2}"})
+     */
+    public function myBooks():JsonResponse
+    {
+        return new JsonResponse('ok');
     }
 }
