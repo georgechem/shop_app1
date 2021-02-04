@@ -17,6 +17,9 @@
     text-transform: capitalize;
     background-color: #dddddd;
     cursor: pointer; }
+    .panel__category__img {
+      width: 32px;
+      margin-bottom: 0; }
     .panel__category:hover {
       background-color: #333;
       color: #ddd; }

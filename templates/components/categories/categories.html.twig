@@ -4,7 +4,9 @@
       {% if c % 4 == 0 %}
            <br>
       {% endif %}
-            <span id="category{{ c }}" class="panel__category">{{ category }}</span>
+            <span id="category{{ c }}" class="panel__category">
+                <img class="panel__category panel__category__img" src="{{ asset('img/nav/folder.svg') }}">
+                {{ category }}</span>
 
       {% set c = c + 1 %}
 
