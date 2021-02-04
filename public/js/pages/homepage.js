@@ -46,7 +46,7 @@ let latestRight = document.getElementById('latestRight');
  * tmp API:
   */`https://localhost:8000/googleBooks/${start}/${total}/subject=web+intitle=php`
 let getBooks = function(start, total){
-    fetch(`https://localhost:8000/myBooks/${start}/${total}/test`)
+    fetch(`https://localhost:8000/myBooks/${start}/${total}/computers`)
         .then((response)=>{
             return response.json();
         })
@@ -96,7 +96,7 @@ let getBooks = function(start, total){
             mainContent.appendChild(titleObject);
             // add all content to main node
             latestContent.appendChild(mainContent);
-            console.log('API ERROR');
+            //console.log('API ERROR');
         });
 }
 getBooks(start, total);
@@ -106,7 +106,7 @@ latestRight.addEventListener('click', function(){
         counter = start + total;
     }
     start = counter;
-    console.log(start, total, totalItems);
+    //console.log(start, total, totalItems);
     getBooks(start, total);
 });
 
@@ -117,6 +117,6 @@ latestLeft.addEventListener('click', function(){
         start = 0;
         counter = start;
     }
-    console.log(start, total, totalItems);
+    //console.log(start, total, totalItems);
     getBooks( start, total);
 });
