@@ -46,7 +46,7 @@ let latestRight = document.getElementById('latestRight');
  *
   */
 let getBooks = function(start, total){
-    fetch(`https://localhost:8000/myBooks/${start}/${total}/php`)
+    fetch(`https://localhost:8000/myBooks/${start}/${total}/web`)
         .then((response)=>{
             return response.json();
         })
