@@ -46,7 +46,7 @@ let latestRight = document.getElementById('latestRight');
  *
   */
 let getBooks = function(start, total){
-    fetch(`https://localhost:8000/myBooks/${start}/${total}/technology`)
+    fetch(`https://localhost:8000/myBooks/${start}/${total}/pc`)
         .then((response)=>{
             return response.json();
         })
