@@ -9,19 +9,28 @@
   width: 90%;
   border-radius: 10px; }
   .panel__category {
+    text-decoration: none;
+    color: black;
+    position: relative;
     border-radius: 10px;
     font-family: Gabriola, serif;
     font-size: 1.3rem;
     margin: 7px 5px;
-    padding: 7px 8px 2px 8px;
+    padding: 7px 8px 2px 7px;
     text-transform: capitalize;
     background-color: #dddddd;
     cursor: pointer; }
     .panel__category__img {
-      width: 32px;
-      margin-bottom: 0; }
+      position: absolute;
+      width: 18px;
+      bottom: 12px;
+      cursor: auto; }
     .panel__category:hover {
       background-color: #333;
       color: #ddd; }
+
+.cat {
+  position: relative;
+  margin-left: 30px; }
 
 /*# sourceMappingURL=categories.css.map */

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Repository\BookRepository;
 use App\Service\CategoryExtractor;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -19,11 +20,33 @@ class PagesController extends AbstractController
         $categories = new CategoryExtractor($raw_data);
         $results = $categories->getMainCategories();
 
+        $books = [];
+        for($i = 0; $i < count($results); $i++){
+            $books[] = $repository->getBooksByCategory(1, 1, $results[$i]);
+        }
+        foreach($books as $key => $book){
+            if($key == 5){
+                foreach ($book as $item){
 
-        $book = $repository->getBooksByCategory(1, 10, $results[10]);
+                    //dd($item);
+                }
+            }
+
+        }
+
 
         return $this->render('pages/homepage.html.twig', [
             'categories' => $results,
         ]);
+    }
+
+    /**
+     * @Route("/categorySelected/{number}", name="app_category_selected", requirements={"number"="[0-9]+"})
+     */
+    public function category(Request $request):Response
+    {
+        $route_params = $request->attributes->get('_route_params');
+
+        return $this->render('pages/category.html.twig', []);
     }
 }

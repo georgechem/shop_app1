@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAK;EACH,gBAAgB,EAAE,OAAO",
+"sources": ["category_selected.scss"],
+"names": [],
+"file": "category_selected.css"
+}

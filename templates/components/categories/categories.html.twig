@@ -1,13 +1,10 @@
 <div class="panel">
-      {% set c = 1 %}
+      {% set c = 0 %}
 {% for category in categories %}
-      {% if c % 4 == 0 %}
-           <br>
-      {% endif %}
-            <span id="category{{ c }}" class="panel__category">
-                <img class="panel__category panel__category__img" src="{{ asset('img/nav/folder.svg') }}">
-                {{ category }}</span>
-
+            <a href="{{ path('app_category_selected', {number: c}) }}" id="category{{ c }}" class="panel__category">
+                <img class="panel__category__img" src="{{ asset('img/nav/folder.svg') }}">
+                <span class="cat">{{ category }}</span>
+            </a>
       {% set c = c + 1 %}
 
 {% endfor %}
