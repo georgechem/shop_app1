@@ -13,6 +13,16 @@ body {
     justify-content: center; }
     .category__content__img {
       width: 128px; }
+    .category__content__title {
+      font-size: 1.2rem; }
+    .category__content__book {
+      text-decoration: none;
+      color: black;
+      margin: 10px;
+      padding: 5px;
+      background-color: #AAAAAA;
+      border: 3px ridge #555;
+      border-radius: 5px; }
 
 .text {
   font-family: Gabriola, serif; }
