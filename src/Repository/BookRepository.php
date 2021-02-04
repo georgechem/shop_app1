@@ -20,6 +20,17 @@ class BookRepository extends ServiceEntityRepository
         parent::__construct($registry, Book::class);
     }
 
+    public function getCategories()
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            "SELECT DISTINCT b.categories FROM App\Entity\Book b"
+        );
+        $result = $query->getResult();
+
+        return $result;
+    }
+
     public function getBooks($start, $max, $query)
     {
         $em = $this->getEntityManager();

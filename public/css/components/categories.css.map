@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,MAAO;EACL,MAAM,EAAE,eAAe",
+"sources": ["categories.scss"],
 "names": [],
 "file": "categories.css"
 }
