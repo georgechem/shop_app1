@@ -60,7 +60,12 @@
     border: 3px double #AAAAAA;
     border-left: 5px double #212224; }
     .navUser__list__item {
-      margin: 5px 0; }
+      text-align: center;
+      margin: 5px 0;
+      padding: 0 10px; }
+      .navUser__list__item:hover {
+        border-radius: 10px;
+        background-color: #777; }
       .navUser__list__item--link {
         font-family: Gabriola, serif;
         font-size: 1.6rem;

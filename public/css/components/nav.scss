@@ -80,7 +80,13 @@ $nav-icon-margin: 5px 5px 5px 5px;
     border: 3px double #AAAAAA;
     border-left: 5px double #212224;
     &__item{
+      text-align: center;
       margin: 5px 0;
+      padding: 0 10px;
+      &:hover{
+        border-radius: 10px;
+        background-color: #777;
+      }
       &--link{
         font-family: Gabriola, serif;
         font-size: 1.6rem;
