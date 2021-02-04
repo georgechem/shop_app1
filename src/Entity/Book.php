@@ -344,4 +344,30 @@ class Book
 
         return $this;
     }
+
+    public function jsonSerialize()
+    {
+        return [
+            'id'=>$this->getId(),
+            'book_id'=>$this->getBookId(),
+            'etag'=>$this->getEtag(),
+            'selfLink'=>$this->getSelfLink(),
+            'epub'=>$this->getEpub(),
+            'pdf'=>$this->getPdf(),
+            'price'=>$this->getPrice(),
+            'currencyCode'=>$this->getCurrencyCode(),
+            'buyLink'=>$this->getBuyLink(),
+            'title'=>$this->getTitle(),
+            'subtitle'=>$this->getSubtitle(),
+            'authors'=>$this->getAuthors(),
+            'publisher'=>$this->getPublisher(),
+            'publishedDate'=>$this->getPublishedDate(),
+            'description'=>$this->getDescription(),
+            'pageCount'=>$this->getPageCount(),
+            'categories'=>$this->getCategories(),
+            'contentVersion'=>$this->getContentVersion(),
+            'imageLink'=>$this->getImageLink().$this->getBookId().'.png',
+            'language'=>$this->getLanguage(),
+        ];
+    }
 }

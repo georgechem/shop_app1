@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Book;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -17,6 +18,22 @@ class BookRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Book::class);
+    }
+
+    public function getBooks($start, $max, $query)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            "SELECT b FROM App\Entity\Book b WHERE b.title LIKE :query ORDER BY b.title ASC"
+        )->setParameter('query', '%'.$query.'%');
+
+        $paginator = new Paginator($query, false);
+        $c = count($paginator);
+        $paginator->getQuery()
+            ->setFirstResult($start)
+            ->setMaxResults($max);
+
+        return $paginator;
     }
 
     // /**

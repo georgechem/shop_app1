@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 use App\Entity\Book;
+use App\Repository\BookRepository;
 use Google\Client;
 use Google_Service_Books;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -104,8 +105,21 @@ class ApiController extends AbstractController
      * @Route("/myBooks/{start}/{max}/{query}", name="app_my_books", methods={"GET"},
      *     requirements={"query"="[a-zA-Z0-9?=\+\-]+", "start"="\d+", "max"="\d{1,2}"})
      */
-    public function myBooks():JsonResponse
+    public function myBooks(Request $request, BookRepository $repo):JsonResponse
     {
-        return new JsonResponse('ok');
+        $route_params = $request->attributes->get('_route_params');
+        $start = $route_params['start'];
+        $max = $route_params['max'];
+        $query = $route_params['query'];
+        $response = $repo->getBooks($start, $max, $query);
+        $results = [];
+        foreach($response->getIterator() as $item){
+            $results[] = $item->jsonSerialize();
+        }
+        //dd(new JsonResponse($results));
+        //dd(json_encode($results));
+
+
+        return new JsonResponse($results);
     }
 }
