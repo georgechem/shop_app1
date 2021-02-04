@@ -1,3 +1,4 @@
+let a;
 // API Query
 /**
  * Set initial values responsible for pagination
@@ -40,13 +41,12 @@ let latestContent = document.getElementById('latestContent');
 let latestLeft = document.getElementById('latestLeft');
 let latestRight = document.getElementById('latestRight');
 /**
- * when on production should be
- * https://www.serverapp.eu/public/index.php/googleBooks/...
+ * when on production should be for title
+ * https://www.serverapp.eu/public/index.php/myBooks/${start}/${total}/php...
  *
- * tmp API:
-  */`https://localhost:8000/googleBooks/${start}/${total}/subject=web+intitle=php`
+  */
 let getBooks = function(start, total){
-    fetch(`https://localhost:8000/myBooks/${start}/${total}/computers`)
+    fetch(`https://localhost:8000/myBooks/${start}/${total}/php`)
         .then((response)=>{
             return response.json();
         })
@@ -66,22 +66,18 @@ let getBooks = function(start, total){
                 let imgObject = document.createElement('img');
                 imgObject.classList.add('latest__content__img');
                 imgObject.src = item.imageLink;
-                //imgObject.src = item.volumeInfo.imageLinks.thumbnail;
                 // generate <p> element & fill with content from API
                 let titleObject = document.createElement('p');
                 titleObject.classList.add('latest__content__title');
                 titleObject.innerText = item.title.slice(0,15);
-                //titleObject.innerText = item.volumeInfo.title;
                 // append created nodes to parent present in html template
                 // append <img>
                 mainContent.appendChild(imgObject);
                 // append <p>
                 mainContent.appendChild(titleObject);
-
                 // add all content to main node
                 latestContent.appendChild(mainContent);
                 oldChildren.push(mainContent);
-
             })
 
 

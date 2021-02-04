@@ -59,8 +59,6 @@ class ApiController extends AbstractController
 
         foreach($test as $volume){
 
-
-            /*
             // new book
             $book = new Book();
             // headers properties
@@ -85,18 +83,16 @@ class ApiController extends AbstractController
             $book->setLanguage($volume->volumeInfo->language ?? 'en-us');
             $book->setImageLink('/books/');
             $title = $book->getBookId();
-            */
 
-            $title = $volume->volumeInfo->title;
             $url = $volume->volumeInfo->imageLinks->thumbnail ?? 'no_image';
             if ($url === 'no_image'){
                 continue;
             }
             $file = file_get_contents($url, false, $context);
             file_put_contents("books/".$title.".png", $file, 0, $context);
-            //$em->persist($book);
+            $em->persist($book);
         }
-        //$em->flush();
+        $em->flush();
 
         return new JsonResponse($test);
     }
@@ -111,7 +107,7 @@ class ApiController extends AbstractController
         $start = $route_params['start'];
         $max = $route_params['max'];
         $query = $route_params['query'];
-        $response = $repo->getBooksByCategory($start, $max, $query);
+        $response = $repo->getBooks($start, $max, $query);
         $many = $response->count();
         $results = [];
         foreach($response->getIterator() as $item){
