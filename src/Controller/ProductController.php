@@ -24,10 +24,9 @@ class ProductController extends AbstractController
             $books[] = $repository->getBooksByCategory(1, 4, $results[$i]);
         }
 
-        //dd($books);
-
         return $this->render('product/category.html.twig', [
             'categories' => $books,
+            'category_list'=>$results,
         ]);
     }
 }

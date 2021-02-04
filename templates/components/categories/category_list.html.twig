@@ -1,13 +1,16 @@
-
+{% set value = 0 %}
 {% for category in categories %}
 <div class="list">
-    <div class="list__title">title</div>
-
+    <div class="list__title">{{ category_list[value] }}</div>
+    {% set value = value + 1 %}
 
     <div class="list__component">
         {% for book in category %}
-        <img src="" class="list__component__img">
-        <span class="list__component__title">title</span>
+            <a class="list__link" href="">
+                <img src="{{ book.imageLink }}{{ book.bookId }}.png" class="list__component__img">
+                <div class="list__component__title">{{ book.title|slice(0,17) }}...</div>
+            </a>
+
         {% endfor %}
     </div>
 
