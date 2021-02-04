@@ -20,20 +20,6 @@ class PagesController extends AbstractController
         $categories = new CategoryExtractor($raw_data);
         $results = $categories->getMainCategories();
 
-        $books = [];
-        for($i = 0; $i < count($results); $i++){
-            $books[] = $repository->getBooksByCategory(1, 1, $results[$i]);
-        }
-        foreach($books as $key => $book){
-            if($key == 5){
-                foreach ($book as $item){
-
-                    //dd($item);
-                }
-            }
-
-        }
-
 
         return $this->render('pages/homepage.html.twig', [
             'categories' => $results,
@@ -52,11 +38,11 @@ class PagesController extends AbstractController
         $categories = new CategoryExtractor($raw_data);
         $results = $categories->getMainCategories();
 
-        $books = $repository->getBooksByCategory(1, 1, $results[$category_number]);
-
+        $books = $repository->getBooksByCategory(0, 10, $results[$category_number]);
 
         return $this->render('pages/category.html.twig', [
-            'paginator' => $books
+            'paginator' => $books,
+            'category' => $results[$category_number],
         ]);
     }
 }

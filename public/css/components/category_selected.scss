@@ -2,3 +2,27 @@ body {
   background-color: #646ea5;
 }
 
+.category {
+  border: 1px solid white;
+  &__title{
+    //border: 1px solid red;
+    background-color: #528eac;
+    text-transform: capitalize;
+    font-size: 3rem;
+  }
+  &__content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    //align-items: center;
+    &__img{
+      width: 128px;
+    }
+  }
+}
+.text {
+  font-family: Gabriola, serif;
+}
+.center {
+  text-align: center;
+}

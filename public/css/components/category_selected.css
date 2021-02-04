@@ -1,4 +1,23 @@
 body {
   background-color: #646ea5; }
 
+.category {
+  border: 1px solid white; }
+  .category__title {
+    background-color: #528eac;
+    text-transform: capitalize;
+    font-size: 3rem; }
+  .category__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .category__content__img {
+      width: 128px; }
+
+.text {
+  font-family: Gabriola, serif; }
+
+.center {
+  text-align: center; }
+
 /*# sourceMappingURL=category_selected.css.map */
