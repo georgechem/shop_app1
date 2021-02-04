@@ -43,10 +43,20 @@ class PagesController extends AbstractController
     /**
      * @Route("/categorySelected/{number}", name="app_category_selected", requirements={"number"="[0-9]+"})
      */
-    public function category(Request $request):Response
+    public function category(Request $request, BookRepository $repository):Response
     {
         $route_params = $request->attributes->get('_route_params');
+        $category_number = $route_params['number'];
 
-        return $this->render('pages/category.html.twig', []);
+        $raw_data = $repository->getCategories();
+        $categories = new CategoryExtractor($raw_data);
+        $results = $categories->getMainCategories();
+
+        $books = $repository->getBooksByCategory(1, 1, $results[$category_number]);
+
+
+        return $this->render('pages/category.html.twig', [
+            'paginator' => $books
+        ]);
     }
 }
