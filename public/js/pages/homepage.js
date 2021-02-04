@@ -1,5 +1,5 @@
 // API Query
-let counter = 1;
+let counter = 0;
 let start = 0;
 let width = window.innerWidth;
 let total = 1;
@@ -14,7 +14,6 @@ else if(width > 870 && width <= 1100){
 }else if(width > 1100){
     total = 5;
 }
-console.log(width);
 let oldChildren = [];
 let totalItems = 0;
 
@@ -31,7 +30,7 @@ let latestRight = document.getElementById('latestRight');
  * tmp API:
   */`https://localhost:8000/googleBooks/${start}/${total}/subject=web+intitle=php`
 let getBooks = function(start, total){
-    fetch(`https://localhost:8000/myBooks/${start}/${total}/php`)
+    fetch(`https://localhost:8000/myBooks/${start}/${total}/test`)
         .then((response)=>{
             return response.json();
         })
@@ -43,7 +42,6 @@ let getBooks = function(start, total){
                 oldChildren = [];
             }
             totalItems = data[0].count;
-            //console.log(data[0].count);
             data.forEach((item)=>{
                 // generate main content element <div>
                 let mainContent = document.createElement('div');
@@ -56,7 +54,7 @@ let getBooks = function(start, total){
                 // generate <p> element & fill with content from API
                 let titleObject = document.createElement('p');
                 titleObject.classList.add('latest__content__title');
-                titleObject.innerText = item.title;
+                titleObject.innerText = item.title.slice(0,15);
                 //titleObject.innerText = item.volumeInfo.title;
                 // append created nodes to parent present in html template
                 // append <img>
@@ -68,19 +66,18 @@ let getBooks = function(start, total){
                 latestContent.appendChild(mainContent);
                 oldChildren.push(mainContent);
 
-                //console.log(item);
             })
-            //latestContentImg[0].src = data[0].volumeInfo.imageLinks.thumbnail;
+
         });
 }
 getBooks(start, total);
 latestRight.addEventListener('click', function(){
 
-    if ((start + total) <= (totalItems - total)){
+    if ((start + total) < (totalItems - total)){
         counter = start + total;
     }
     start = counter;
-    //console.log(start, total, totalItems);
+    console.log(start, total, totalItems);
     getBooks(start, total);
 });
 
@@ -89,7 +86,8 @@ latestLeft.addEventListener('click', function(){
     start = counter;
     if(start < 0){
         start = 0;
+        counter = start;
     }
-    //console.log(start, total, totalItems);
+    console.log(start, total, totalItems);
     getBooks( start, total);
 });

@@ -36,6 +36,22 @@ class BookRepository extends ServiceEntityRepository
         return $paginator;
     }
 
+    public function getBooksByCategory($start, $max, $query)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            "SELECT b FROM App\Entity\Book b WHERE b.categories LIKE :query ORDER BY b.title ASC"
+        )->setParameter('query', '%'.$query.'%');
+
+        $paginator = new Paginator($query, false);
+        $c = count($paginator);
+        $paginator->getQuery()
+            ->setFirstResult($start)
+            ->setMaxResults($max);
+
+        return $paginator;
+    }
+
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */

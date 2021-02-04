@@ -111,7 +111,7 @@ class ApiController extends AbstractController
         $start = $route_params['start'];
         $max = $route_params['max'];
         $query = $route_params['query'];
-        $response = $repo->getBooks($start, $max, $query);
+        $response = $repo->getBooksByCategory($start, $max, $query);
         $many = $response->count();
         $results = [];
         foreach($response->getIterator() as $item){
