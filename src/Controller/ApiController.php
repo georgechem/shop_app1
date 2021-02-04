@@ -112,14 +112,15 @@ class ApiController extends AbstractController
         $max = $route_params['max'];
         $query = $route_params['query'];
         $response = $repo->getBooks($start, $max, $query);
+        $many = $response->count();
         $results = [];
         foreach($response->getIterator() as $item){
             $results[] = $item->jsonSerialize();
         }
         //dd(new JsonResponse($results));
         //dd(json_encode($results));
-
-
+        $results[0]['count'] = $many;
+        //dd($results);
         return new JsonResponse($results);
     }
 }

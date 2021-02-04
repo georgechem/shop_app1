@@ -1,6 +1,6 @@
 // API Query
 let counter = 1;
-let start = 1;
+let start = 0;
 let width = window.innerWidth;
 let total = 1;
 if(width > 500 && width <= 700){
@@ -16,6 +16,7 @@ else if(width > 870 && width <= 1100){
 }
 console.log(width);
 let oldChildren = [];
+let totalItems = 0;
 
 
 // DOM elements
@@ -26,9 +27,11 @@ let latestRight = document.getElementById('latestRight');
 /**
  * when on production should be
  * https://www.serverapp.eu/public/index.php/googleBooks/...
-  */
+ *
+ * tmp API:
+  */`https://localhost:8000/googleBooks/${start}/${total}/subject=web+intitle=php`
 let getBooks = function(start, total){
-    fetch(`https://localhost:8000/googleBooks/${start}/${total}/subject=web+intitle=php`)
+    fetch(`https://localhost:8000/myBooks/${start}/${total}/php`)
         .then((response)=>{
             return response.json();
         })
@@ -39,6 +42,8 @@ let getBooks = function(start, total){
                 })
                 oldChildren = [];
             }
+            totalItems = data[0].count;
+            //console.log(data[0].count);
             data.forEach((item)=>{
                 // generate main content element <div>
                 let mainContent = document.createElement('div');
@@ -46,11 +51,13 @@ let getBooks = function(start, total){
                 // generate <img> element & fill with content from API
                 let imgObject = document.createElement('img');
                 imgObject.classList.add('latest__content__img');
-                imgObject.src = item.volumeInfo.imageLinks.thumbnail;
+                imgObject.src = item.imageLink;
+                //imgObject.src = item.volumeInfo.imageLinks.thumbnail;
                 // generate <p> element & fill with content from API
                 let titleObject = document.createElement('p');
                 titleObject.classList.add('latest__content__title');
-                titleObject.innerText = item.volumeInfo.title;
+                titleObject.innerText = item.title;
+                //titleObject.innerText = item.volumeInfo.title;
                 // append created nodes to parent present in html template
                 // append <img>
                 mainContent.appendChild(imgObject);
@@ -68,16 +75,21 @@ let getBooks = function(start, total){
 }
 getBooks(start, total);
 latestRight.addEventListener('click', function(){
+
+    if ((start + total) <= (totalItems - total)){
         counter = start + total;
-        start = counter;
-        getBooks(start, total);
+    }
+    start = counter;
+    //console.log(start, total, totalItems);
+    getBooks(start, total);
 });
 
 latestLeft.addEventListener('click', function(){
     counter = start - total;
     start = counter;
-    if(start < 1){
-        start = 1;
+    if(start < 0){
+        start = 0;
     }
+    //console.log(start, total, totalItems);
     getBooks( start, total);
 });
