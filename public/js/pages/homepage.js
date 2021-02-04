@@ -1,8 +1,15 @@
 // API Query
+/**
+ * Set initial values responsible for pagination
+ * @type {number}
+ */
 let counter = 0;
 let start = 0;
 let width = window.innerWidth;
 let total = 1;
+/**
+ * Check width to optimize amount of book loaded
+ */
 if(width > 500 && width <= 700){
     total = 2;
 }
@@ -14,7 +21,16 @@ else if(width > 870 && width <= 1100){
 }else if(width > 1100){
     total = 5;
 }
+/**
+ * variable which will holds old children from DOM
+ * allow secure removal
+ * @type {*[]}
+ */
 let oldChildren = [];
+/**
+ * represents all items available after query
+ * @type {number}
+ */
 let totalItems = 0;
 
 
@@ -68,6 +84,19 @@ let getBooks = function(start, total){
 
             })
 
+
+        })
+        .catch((e)=>{
+            let mainContent = document.createElement('div');
+            mainContent.classList.add('latest__content__main');
+            let titleObject = document.createElement('p');
+            titleObject.classList.add('latest__content__title');
+            titleObject.innerHTML ='Image(s) could not be loaded<p></p><cite>Apology</cite></p>';
+            // append <p>
+            mainContent.appendChild(titleObject);
+            // add all content to main node
+            latestContent.appendChild(mainContent);
+            console.log('API ERROR');
         });
 }
 getBooks(start, total);
