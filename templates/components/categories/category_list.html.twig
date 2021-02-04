@@ -1,0 +1,16 @@
+
+{% for category in categories %}
+<div class="list">
+    <div class="list__title">title</div>
+
+
+    <div class="list__component">
+        {% for book in category %}
+        <img src="" class="list__component__img">
+        <span class="list__component__title">title</span>
+        {% endfor %}
+    </div>
+
+
+</div>
+{% endfor %}

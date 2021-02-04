@@ -4,7 +4,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-     <link rel="stylesheet" href="{{ asset('css/product/category.css') }}">
+     <link rel="stylesheet" href="{{ asset('css/components/category_list.css') }}">
     {#  Components styles #}
     <link rel="stylesheet" href="{{ asset('css/components/nav.css') }}">
 {% endblock %}
@@ -28,6 +28,10 @@
 
     {# panel books #}
     {% embed 'components/nav/panel_books.html.twig' %}
+    {% endembed %}
+
+    {# category list component #}
+    {% embed 'components/categories/category_list.html.twig' %}
     {% endembed %}
 
 

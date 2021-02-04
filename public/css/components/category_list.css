@@ -1,0 +1,19 @@
+body {
+  background-color: #646ea5; }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black; }
+  .list__title {
+    text-align: center;
+    font-family: Gabriola, serif;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    border: 1px solid white; }
+  .list__component {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red; }
+
+/*# sourceMappingURL=category_list.css.map */
