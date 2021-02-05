@@ -1,0 +1,45 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/homepage.css') }}">
+    {#  Components styles #}
+    <link rel="stylesheet" href="{{ asset('css/components/nav.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    {# MENU - Top Bar component #}
+    {% embed 'components/nav/top_bar.html.twig' %}
+    {% endembed %}
+
+    {% if app.user is empty%}
+        {# MENU - If user not logged in panel #}
+        {% embed 'components/nav/panel_user_anon.html.twig' %}
+        {% endembed %}
+    {% endif %}
+
+    {% if app.user is not empty%}
+        {# MENU - if user is logged #}
+        {% embed 'components/nav/panel_user_logged.html.twig' %}
+        {% endembed %}
+    {% endif %}
+
+    {# MENU - panel menu books #}
+    {% embed 'components/nav/panel_books.html.twig' %}
+    {% endembed %}
+
+
+
+{% endblock %}
+{%  block javascripts %}
+
+    {# MENU - vavigation #}
+    <script src="{{ asset('js/components/nav.js') }}"></script>
+
+    {# <script src="{{ asset('js/pages/homepage.js') }}"></script> #}
+
+{% endblock %}

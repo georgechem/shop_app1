@@ -1,3 +1,4 @@
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Homepage{% endblock %}
@@ -12,29 +13,29 @@
 {% endblock %}
 
 {% block body %}
-    {# Top Bar component #}
+    {# MENU - Top Bar component #}
     {% embed 'components/nav/top_bar.html.twig' %}
     {% endembed %}
 
     {% if app.user is empty%}
-    {# If user not logged in panel #}
+    {# MENU - If user not logged in panel #}
     {% embed 'components/nav/panel_user_anon.html.twig' %}
     {% endembed %}
     {% endif %}
 
     {% if app.user is not empty%}
-    {# if user is logged #}
+    {# MENU -  if user is logged #}
     {% embed 'components/nav/panel_user_logged.html.twig' %}
     {% endembed %}
     {% endif %}
 
-    {# panel books #}
+    {# MENU - panel menu books #}
     {% embed 'components/nav/panel_books.html.twig' %}
     {% endembed %}
 
     <div id="bestsellers" class="bestsellers">Bestsellers</div>
 
-    {# panel books #}
+    {# panel latest #}
     {% embed 'components/latest/latest.html.twig' %}
     {% endembed %}
 
