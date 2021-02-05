@@ -7,9 +7,9 @@ body {
   text-decoration: none; }
 .list__title {
   text-align: center;
-  font-family: Gabriola, serif;
+  font-family: indie_flowerregular, serif;
   text-transform: capitalize;
-  font-size: 2.5rem; }
+  font-size: 2.2rem; }
 .list__component {
   background-color: #1a4975;
   position: relative;
@@ -21,8 +21,8 @@ body {
     width: 100%;
     padding: 0 7px;
     background-color: #dddddd;
-    font-family: Gabriola, serif;
-    font-size: 1.2rem; }
+    font-family: indie_flowerregular, serif;
+    font-size: 1rem; }
   .list__component__img {
     width: 100%; }
 

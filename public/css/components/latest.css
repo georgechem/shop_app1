@@ -27,22 +27,17 @@
       width: 164px; }
     .latest__content__title {
       border: 1px solid #222;
-      font-family: Gabriola, serif;
-      font-size: 1.2rem;
+      font-family: indie_flowerregular, serif;
+      font-size: 0.8rem;
+      font-weight: bolder;
       max-width: 180px;
       border-radius: 15px;
       margin: 0 auto;
       padding: 5px 5px 0 5px;
       background-color: #ddd;
       text-align: center; }
-    .latest__content__carousel__title {
-      font-family: Gabriola, serif;
-      font-size: 2rem;
-      color: #ddd;
-      text-align: center;
-      text-transform: uppercase; }
   .latest__nav {
-    filter: grayscale(90%);
+    filter: grayscale(80%);
     cursor: pointer;
     width: 32px; }
 

@@ -5,7 +5,6 @@ body {
 .category {
   border: 1px solid white;
   &__title{
-    //border: 1px solid red;
     background-color: #528eac;
     text-transform: capitalize;
     font-size: 3rem;
@@ -14,12 +13,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    //align-items: center;
+
     &__img{
       width: 100%;
     }
     &__title{
-      font-size: 1.2rem;
+      margin-top: 5px;
+      font-size: 1rem;
+      color:#111;
     }
     &__book{
       text-decoration: none;
@@ -34,7 +35,7 @@ body {
   }
 }
 .text {
-  font-family: Gabriola, serif;
+  font-family: indie_flowerregular, serif;
 
 }
 .center {

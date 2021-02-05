@@ -14,7 +14,9 @@ body {
     .category__content__img {
       width: 100%; }
     .category__content__title {
-      font-size: 1.2rem; }
+      margin-top: 5px;
+      font-size: 1rem;
+      color: #111; }
     .category__content__book {
       text-decoration: none;
       color: black;
@@ -25,7 +27,7 @@ body {
       border-radius: 5px; }
 
 .text {
-  font-family: Gabriola, serif; }
+  font-family: indie_flowerregular, serif; }
 
 .center {
   text-align: center; }
