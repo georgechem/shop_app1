@@ -13,7 +13,7 @@
                 <div class="list__component__title">{{ book.title|slice(0,17)}}...</div>
                 <div class="list__nav">
                     <img id="{{ value }}{{ item }}" data="{{ book.price }} {{ book.currencyCode }}"  src="{{ asset('img/nav/plus.svg') }}" class="img_width--left">
-                    <img name="{{ value }}{{ item }}" data="{{ book.description|slice(0,270)|striptags }}"  src="{{ asset('img/nav/info.svg') }}" class="img_width--right right">
+                    <img name="{{ value }}{{ item }}" data="{{ book.description|slice(0,260)|striptags }}"  src="{{ asset('img/nav/info.svg') }}" class="img_width--right right">
                 </div>
             </a>
         {% set item = item + 1 %}
