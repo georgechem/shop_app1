@@ -7,7 +7,7 @@
     <div class="list__component">
         {% for book in category %}
             <a class="list__link" href="{{ path('app_product', {id: book.bookId}) }}">
-                <img src="{{ book.imageLink }}{{ book.bookId }}.png" class="list__component__img">
+                <img src="{{ asset('books/') }}{{ book.bookId }}.png" class="list__component__img">
                 <div class="list__component__title">{{ book.title|slice(0,17) }}...</div>
             </a>
 
