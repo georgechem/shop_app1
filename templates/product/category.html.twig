@@ -4,9 +4,10 @@
 
 {% block stylesheets %}
     {{ parent() }}
-     <link rel="stylesheet" href="{{ asset('css/components/category_list.css') }}">
+
     {#  Components styles #}
     <link rel="stylesheet" href="{{ asset('css/components/nav.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/components/category_list.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components/category_selected.css') }}">
 {% endblock %}
 
@@ -40,5 +41,5 @@
 {%  block javascripts %}
     {{ parent() }}
     <script src="{{ asset('js/components/nav.js') }}"></script>
-
+    <script src="{{ asset('js/components/category.js') }}"></script>
 {% endblock %}

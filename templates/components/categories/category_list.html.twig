@@ -1,17 +1,24 @@
 {% set value = 0 %}
+{% set item = 0 %}
 {% for category in categories %}
 <div class="list">
     <div class="list__title">{{ category_list[value] }}</div>
-    {% set value = value + 1 %}
+
 
     <div class="list__component">
         {% for book in category %}
             <a class="list__link" href="{{ path('app_product', {id: book.bookId}) }}">
+                <div id="message{{ value }}{{ item }}" class="message hidden"></div>
                 <img src="{{ asset('books/') }}{{ book.bookId }}.png" class="list__component__img">
-                <div class="list__component__title">{{ book.title|slice(0,17) }}...</div>
+                <div class="list__component__title">{{ book.title|slice(0,17)}}...</div>
+                <div class="list__nav">
+                    <img id="{{ value }}{{ item }}" data="{{ book.price }} {{ book.currencyCode }}"  src="{{ asset('img/nav/plus.svg') }}" class="img_width--left">
+                    <img name="{{ value }}{{ item }}" data="{{ book.description|slice(0,270)|striptags }}"  src="{{ asset('img/nav/info.svg') }}" class="img_width--right right">
+                </div>
             </a>
-
+        {% set item = item + 1 %}
         {% endfor %}
+        {% set value = value + 1 %}
     </div>
 </div>
 {% endfor %}
