@@ -20,9 +20,10 @@
     </form>
 
 </div>
-    {% block javascripts %}
-       {{ parent() }}
-        <script src="{{ asset('js/components/test/test.js') }}"></script>
-    {% endblock %}
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/components/test/test.js') }}"></script>
 {% endblock %}

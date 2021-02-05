@@ -1,4 +1,4 @@
-/*
+
 let input = document.getElementById('text');
 let submit = document.getElementById('submit')
 
@@ -12,4 +12,3 @@ submit.addEventListener('click', function(e){
     message_block.appendChild(element);
     input.value = '';
 });
-*/
