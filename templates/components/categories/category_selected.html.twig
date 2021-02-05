@@ -8,7 +8,7 @@
     <div class="category__content">
         {% for book in paginator %}
         <a href="{{ path('app_product', {id: book.bookId}) }}" class="category__content__book">
-            <img class="category__content__img" src="{{ book.imageLink }}{{ book.bookId }}.png">
+            <img class="category__content__img" src="{{ asset("books/") }}{{ book.bookId }}.png">
             <div class="category__content__title text center">
                 {{ book.title|slice(0,17) }}...
             </div>
