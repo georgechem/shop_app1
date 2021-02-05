@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   justify-content: center;
   border: 3px ridge #3a708a;
-  width:90%;
+  width:95%;
   border-radius: 10px;
   &__category{
     text-decoration: none;
@@ -14,8 +14,8 @@
     position: relative;
     border-radius: 10px;
     font-family: Gabriola, serif;
-    font-size: 1.3rem;
-    margin: 7px 5px;
+    font-size: 1.1rem;
+    margin: 5px 5px;
     padding: 7px 8px 2px 7px;
     text-transform: capitalize;
     background-color: #dddddd;
@@ -32,5 +32,5 @@
 }
 .cat {
   position: relative;
-  margin-left: 6px;
+  margin-left: 5px;
 }
