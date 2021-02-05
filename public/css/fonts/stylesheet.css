@@ -5,6 +5,7 @@
 @font-face {
     font-family: 'indie_flowerregular';
     src: url('indieflower-regular-webfont.woff2') format('woff2'),
+        url('IndieFlower-Regular.ttf') format('truetype'),
          url('indieflower-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;

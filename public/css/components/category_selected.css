@@ -1,30 +1,28 @@
 body {
   background-color: #646ea5; }
 
-.category {
-  border: 1px solid white; }
-  .category__title {
-    background-color: #528eac;
-    text-transform: capitalize;
-    font-size: 3rem; }
-  .category__content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; }
-    .category__content__img {
-      width: 100%; }
-    .category__content__title {
-      margin-top: 5px;
-      font-size: 1rem;
-      color: #111; }
-    .category__content__book {
-      text-decoration: none;
-      color: black;
-      margin: 10px;
-      padding: 5px;
-      background-color: #AAAAAA;
-      border: 3px ridge #555;
-      border-radius: 5px; }
+.category__title {
+  background-color: #528eac;
+  text-transform: capitalize;
+  font-size: 3rem; }
+.category__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .category__content__img {
+    width: 100%; }
+  .category__content__title {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #111; }
+  .category__content__book {
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    padding: 5px;
+    background-color: #AAAAAA;
+    border: 3px ridge #555;
+    border-radius: 5px; }
 
 .text {
   font-family: indie_flowerregular, serif; }
