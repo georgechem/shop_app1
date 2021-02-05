@@ -12,7 +12,7 @@ body {
     flex-wrap: wrap;
     justify-content: center; }
     .category__content__img {
-      width: 128px; }
+      width: 100%; }
     .category__content__title {
       font-size: 1.2rem; }
     .category__content__book {

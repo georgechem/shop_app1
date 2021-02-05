@@ -24,6 +24,6 @@ body {
     font-family: Gabriola, serif;
     font-size: 1.2rem; }
   .list__component__img {
-    width: 128px; }
+    width: 100%; }
 
 /*# sourceMappingURL=category_list.css.map */
