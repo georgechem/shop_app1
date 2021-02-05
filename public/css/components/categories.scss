@@ -21,9 +21,7 @@
     background-color: #dddddd;
     cursor: pointer;
     &__img{
-      position: absolute;
       width: 18px;
-      bottom: 12px;
       cursor: auto;
     }
     &:hover{
@@ -34,5 +32,5 @@
 }
 .cat {
   position: relative;
-  margin-left: 30px;
+  margin-left: 6px;
 }

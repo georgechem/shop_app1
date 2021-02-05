@@ -21,9 +21,7 @@
     background-color: #dddddd;
     cursor: pointer; }
     .panel__category__img {
-      position: absolute;
       width: 18px;
-      bottom: 12px;
       cursor: auto; }
     .panel__category:hover {
       background-color: #333;
@@ -31,6 +29,6 @@
 
 .cat {
   position: relative;
-  margin-left: 30px; }
+  margin-left: 6px; }
 
 /*# sourceMappingURL=categories.css.map */
