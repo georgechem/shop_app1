@@ -14,14 +14,12 @@
   .nav__cart__value {
     padding: 0 6px;
     opacity: 0.8;
-    font-family: "Cambria Math",serif;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    color: darkgreen;
+    font-family: serif;
+    font-size: 2rem;
+    color: black;
     position: absolute;
-    right: 40px;
-    top: 8px; }
+    right: 35px;
+    top: 4px; }
   .nav__cart__img {
     position: absolute;
     width: 32px;
