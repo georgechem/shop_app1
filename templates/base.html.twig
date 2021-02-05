@@ -9,15 +9,34 @@
             <link rel="stylesheet" href="{{ asset('css/fonts/stylesheet.css') }}" type="text/css"/>
             <link rel="stylesheet" href="{{ asset('css/main.css') }}">
             <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+
+            <link rel="stylesheet" href="{{ asset('css/components/nav.css') }}">
+
             <script src="{{ asset('lib/gsap/gsap.min.js') }}"></script>
         {% endblock %}
 
     </head>
 
     <body>
-        {% block nav %}
+        {# MENU - Top Bar component #}
+        {% embed 'components/nav/top_bar.html.twig' %}
+        {% endembed %}
 
-        {% endblock %}
+        {% if app.user is empty%}
+            {# MENU - If user not logged in panel #}
+            {% embed 'components/nav/panel_user_anon.html.twig' %}
+            {% endembed %}
+        {% endif %}
+
+        {% if app.user is not empty%}
+            {# MENU -  if user is logged #}
+            {% embed 'components/nav/panel_user_logged.html.twig' %}
+            {% endembed %}
+        {% endif %}
+
+        {# MENU - panel menu books #}
+        {% embed 'components/nav/panel_books.html.twig' %}
+        {% endembed %}
 
         {% block body %}
 
@@ -25,6 +44,7 @@
         {% endblock %}
         {% block javascripts %}
             <script src="{{ asset('js/api/api.js') }}"></script>
+            <script src="{{ asset('js/components/nav.js') }}"></script>
         {% endblock %}
     </body>
 </html>

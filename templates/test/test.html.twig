@@ -1,4 +1,4 @@
-{% extends 'main/homepage.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Test{% endblock %}
 
@@ -8,20 +8,20 @@
 {% endblock %}
 
 {% block body %}
- {{ parent() }}
+
     <div id="sent" class="sent">
 
     </div>
 
 <div class="main">
     <form class="main__form" action="{{ path('app_test') }}" method="post">
-        <input type="text" class="main__textarea" id="text_area" name="text_area" rows="4" cols="40"></input>
+        <input type="text" class="main__text" id="text" name="text">
         <input id="submit" class="main__submit" type="submit">
     </form>
 
 </div>
     {% block javascripts %}
-        {{ parent() }}
+       {{ parent() }}
         <script src="{{ asset('js/components/test/test.js') }}"></script>
     {% endblock %}
 

@@ -1,5 +1,5 @@
-console.log('ok');
-let input = document.getElementById('text_area');
+/*
+let input = document.getElementById('text');
 let submit = document.getElementById('submit')
 
 let message_block = document.getElementById('sent');
@@ -12,3 +12,4 @@ submit.addEventListener('click', function(e){
     message_block.appendChild(element);
     input.value = '';
 });
+*/
