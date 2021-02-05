@@ -14,7 +14,7 @@
             Published {{ book.publishedDate }}
         </div>
         <div class="center">
-            <img class="" src="{{ book.imageLink }}{{ book.bookId }}.png">
+            <img class="" src="{{ asset('books/') }}{{ book.bookId }}.png">
         </div>
         <div class="content center">
             Price: <span class="max">{{ book.price }}</span>{{ book.currencyCode }}
