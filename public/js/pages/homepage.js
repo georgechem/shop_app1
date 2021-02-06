@@ -8,6 +8,7 @@ let counter = 0;
 let start = 0;
 let width = window.innerWidth;
 let total = 1;
+let disable_controls = false;
 /**
  * Check width to optimize amount of book loaded
  */
@@ -51,12 +52,7 @@ let getBooks = function(start, total){
             return response.json();
         })
         .then((data)=>{
-            if(oldChildren.length === data.length){
-                oldChildren.forEach((child)=>{
-                    latestContent.removeChild(child);
-                })
-                oldChildren = [];
-            }
+
             totalItems = data[0].count;
             data.forEach((item)=>{
                 // generate main content element <div>
@@ -75,8 +71,20 @@ let getBooks = function(start, total){
                 mainContent.appendChild(imgObject);
                 // append <p>
                 mainContent.appendChild(titleObject);
+                /**
+                 * remove old children just before appending new on that
+                 * guarantees the best User Experience, as pictures replaced
+                 * instantly
+                 */
+                if(oldChildren.length === data.length){
+                    oldChildren.forEach((child)=>{
+                        latestContent.removeChild(child);
+                    })
+                    oldChildren = [];
+                }
                 // add all content to main node
                 latestContent.appendChild(mainContent);
+
                 oldChildren.push(mainContent);
             })
 
@@ -92,12 +100,17 @@ let getBooks = function(start, total){
             mainContent.appendChild(titleObject);
             // add all content to main node
             latestContent.appendChild(mainContent);
-            //console.log('API ERROR');
+            //disable latest navigation - it will be automatically enabled
+            //when page refresh and API responds correctly
+            disable_controls = true;
+
         });
 }
 getBooks(start, total);
 latestRight.addEventListener('click', function(){
-
+    if(disable_controls === true){
+        return;
+    }
     if ((start + total) < (totalItems - total)){
         counter = start + total;
     }
@@ -107,6 +120,9 @@ latestRight.addEventListener('click', function(){
 });
 
 latestLeft.addEventListener('click', function(){
+    if(disable_controls === true){
+        return;
+    }
     counter = start - total;
     start = counter;
     if(start < 0){
