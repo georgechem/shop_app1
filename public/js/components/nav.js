@@ -19,7 +19,12 @@
      * User action USER BUTTON, DOM BUTTON USER -- ACTION CLICK
      */
     navUser.addEventListener('click', function(){
-        panelUser.classList.toggle('hidden');
+        if(panelUser.classList.contains('hidden')){
+            panelUser.classList.remove('hidden');
+        }else{
+            panelUser.classList.add('hidden');
+            panelUser.style.opacity = 1;
+        }
         gsap.from(panelUser, {duration: 1, opacity: 0});
         // add hidden class to all others menus
         panelBooks.classList.add('hidden');
@@ -29,7 +34,12 @@
      * User action BOOK BUTTON, DOM BUTTON BOOK -- ACTION CLICK
      */
     navBook.addEventListener('click', function(){
-        panelBooks.classList.toggle('hidden');
+        if(panelBooks.classList.contains('hidden')){
+            panelBooks.classList.remove('hidden');
+        }else{
+            panelBooks.classList.add('hidden');
+            panelBooks.style.opacity = 1;
+        }
         gsap.from(panelBooks, {duration: 1, opacity: 0});
         // add hidden class to all others menus
         panelUser.classList.add('hidden');
