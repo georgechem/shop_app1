@@ -1,4 +1,22 @@
 body {
  background-color: #646ea5;
-}
+ margin-top: 55px;
 
+}
+.container {
+ //border: 1px solid black;
+}
+.box {
+ position: relative;
+ //border: 1px solid white;
+ width: 100%;
+ height: 150px;
+}
+.dot{
+ position: absolute;
+ border: 3px solid black;
+ background-color: #dddddd;
+ width: 25px;
+ height: 25px;
+ border-radius: 50%;
+}
