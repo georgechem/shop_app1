@@ -18,6 +18,7 @@
     </head>
 
     <body>
+    <div class="main__menu">
         {# MENU - Top Bar component #}
         {% embed 'components/nav/top_bar.html.twig' %}
         {% endembed %}
@@ -37,11 +38,14 @@
         {# MENU - panel menu books #}
         {% embed 'components/nav/panel_books.html.twig' %}
         {% endembed %}
+    </div>
+
 
         {% block body %}
 
 
         {% endblock %}
+
         {% block javascripts %}
             <script src="{{ asset('js/api/api.js') }}"></script>
             <script src="{{ asset('js/components/nav.js') }}"></script>

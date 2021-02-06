@@ -1,14 +1,14 @@
 $nav-icon-width: 32px;
 $nav-icon-height: 32px;
 $nav-icon-margin: 5px 5px 5px 5px;
-
-
-.nav{
-  // position changed and width added
+.main__menu{
+  top: 0;
   position: fixed;
   width: 100%;
-  //position: relative;
   z-index: 100;
+}
+
+.nav{
   opacity: 1;
   background-color: #AAAAAA;
   display: flex;
@@ -26,7 +26,6 @@ $nav-icon-margin: 5px 5px 5px 5px;
       padding: 0 6px;
       opacity: 0.8;
       font-family: serif;
-      //font-weight: bolder;
       font-size: 2rem;
       color: black;
       position: absolute;
@@ -58,7 +57,6 @@ $nav-icon-margin: 5px 5px 5px 5px;
       min-height: 30px;
       &:focus{
         border: 2px groove black;
-        //background-color: #558e92;
         outline: none;
       }
     }
@@ -67,14 +65,9 @@ $nav-icon-margin: 5px 5px 5px 5px;
 }
 .navUser  {
   z-index: 100;
-  // position changed and margin:0 disabled and margin-top: 40px put
-  margin-top: 40px;
   position: fixed;
-  //position: absolute;
   opacity: 1;
-  //margin: 0;
   display: flex;
-  //align-items: flex-start;
   &__list{
     list-style: none;
     margin: 15px 0;

@@ -3,8 +3,7 @@ body {
 }
 
 .list{
-
-  //border: 1px solid black;
+  margin-top: 50px;
   &__link{
     position: relative;
     margin: 30px auto;
@@ -16,7 +15,6 @@ body {
     font-family: indie_flowerregular, serif;
     text-transform: capitalize;
     font-size: 2.2rem;
-    //border: 1px solid white;
 
   }
   &__component{
@@ -24,7 +22,6 @@ body {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    //flex-direction: column;
     border: 1px solid black;
     border-radius: 5px;
     &__title{
@@ -33,8 +30,6 @@ body {
       background-color: #dddddd;
       font-family: indie_flowerregular, serif;
       font-size: 1rem;
-      //position: absolute;
-      //bottom: 0;
 
     }
     &__img{
@@ -46,7 +41,6 @@ body {
     position: relative;
     background-color: #3a6288;
     border-radius: 0 0 15px 15px;
-    //border: 1px solid red;
   }
 
 }

@@ -3,13 +3,19 @@ body {
 }
 
 .category {
-  //border: 1px solid white;
+  position: relative;
+  &__selected{
+    &__container{
+      margin-top: 50px;
+    }
+  }
   &__title{
     background-color: #528eac;
     text-transform: capitalize;
     font-size: 3rem;
   }
   &__content{
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

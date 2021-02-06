@@ -12,11 +12,15 @@
 {% block body %}
 
     {# category selected #}
-    {% embed 'components/categories/category_selected.html.twig' %}
-    {% endembed %}
+    <div class="category__selected__container">
+        {% embed 'components/categories/category_selected.html.twig' %}
+        {% endembed %}
+    </div>
+
 
 
 {% endblock %}
+
 {%  block javascripts %}
     {{ parent() }}
 
