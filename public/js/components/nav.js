@@ -25,7 +25,7 @@
             panelUser.classList.add('hidden');
             panelUser.style.opacity = 1;
         }
-        gsap.from(panelUser, {duration: 1, opacity: 0});
+        gsap.from(panelUser, {duration: 0.6, opacity: 0});
         // add hidden class to all others menus
         panelBooks.classList.add('hidden');
 
@@ -40,7 +40,7 @@
             panelBooks.classList.add('hidden');
             panelBooks.style.opacity = 1;
         }
-        gsap.from(panelBooks, {duration: 1, opacity: 0});
+        gsap.from(panelBooks, {duration: 0.6, opacity: 0});
         // add hidden class to all others menus
         panelUser.classList.add('hidden');
     });

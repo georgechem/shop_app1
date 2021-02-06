@@ -4,7 +4,10 @@ $nav-icon-margin: 5px 5px 5px 5px;
 
 
 .nav{
-  position: relative;
+  // position changed and width added
+  position: fixed;
+  width: 100%;
+  //position: relative;
   z-index: 100;
   opacity: 1;
   background-color: #AAAAAA;
@@ -64,9 +67,12 @@ $nav-icon-margin: 5px 5px 5px 5px;
 }
 .navUser  {
   z-index: 100;
-  position: absolute;
+  // position changed and margin:0 disabled and margin-top: 40px put
+  margin-top: 40px;
+  position: fixed;
+  //position: absolute;
   opacity: 1;
-  margin: 0;
+  //margin: 0;
   display: flex;
   //align-items: flex-start;
   &__list{

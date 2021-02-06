@@ -1,5 +1,6 @@
 .nav {
-  position: relative;
+  position: fixed;
+  width: 100%;
   z-index: 100;
   opacity: 1;
   background-color: #AAAAAA;
@@ -45,9 +46,9 @@
 
 .navUser {
   z-index: 100;
-  position: absolute;
+  margin-top: 40px;
+  position: fixed;
   opacity: 1;
-  margin: 0;
   display: flex; }
   .navUser__list {
     list-style: none;
