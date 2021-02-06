@@ -53,10 +53,12 @@ function moveRight(item, x1, y1, opacity, scale){
         g = Math.min(g1, 0);
         b = Math.min(b1, 50);
         item.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
         x += 4*(Math.random()) * factor_x;
         y += 4*(Math.random()) * factor_y;
         if (y <= 0 || y > offset){
             factor_y *= -1;
+
         }
 
 

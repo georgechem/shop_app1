@@ -4,7 +4,10 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/components/test/test.css') }}">
+    {# styles to animation ball #}
+    {# <link rel="stylesheet" href="{{ asset('css/components/test/test.css') }}"> #}
+    <link rel="stylesheet" href="{{ asset('css/components/test/test2.css') }}">
+
 {% endblock %}
 
 {% block body %}
@@ -16,5 +19,8 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('js/components/test/test.js') }}"></script>
+    {# animation balls #}
+    {# <script src="{{ asset('js/components/test/test.js') }}"></script> #}
+    <script src="{{ asset('js/components/test/test2.js') }}"></script>
+
 {% endblock %}
