@@ -2,7 +2,6 @@ body {
   background-color: #646ea5; }
 
 .window {
-  margin-top: 40px;
   max-width: 760px;
   border: 3px ridge #479; }
   .window__bar {
