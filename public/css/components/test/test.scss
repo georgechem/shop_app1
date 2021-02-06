@@ -1,33 +1,4 @@
-.main {
- &__form{
-  display: flex;
-  flex-direction: column;
- }
-
- margin-top: 20px;
- &__text {
-  text-align: center;
-  min-height: 30px;
-  min-width: 300px;
-  border-radius: 5px;
-  resize: none;
- }
- &__submit{
-  border-radius: 5px;
-  width: 300px;
-  font-size: 2rem;
- }
-}
-
-.sent{
- display: flex;
- flex-direction: column;
- &__message{
-  text-align: center;
-  border-radius: 5px;
-  background-color: #dddddd;
-  padding: 2px 6px;
-  margin: 3px auto;
- }
+body {
+ background-color: #646ea5;
 }
 

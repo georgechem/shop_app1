@@ -1,27 +1,4 @@
-.main {
-  margin-top: 20px; }
-  .main__form {
-    display: flex;
-    flex-direction: column; }
-  .main__text {
-    text-align: center;
-    min-height: 30px;
-    min-width: 300px;
-    border-radius: 5px;
-    resize: none; }
-  .main__submit {
-    border-radius: 5px;
-    width: 300px;
-    font-size: 2rem; }
-
-.sent {
-  display: flex;
-  flex-direction: column; }
-  .sent__message {
-    text-align: center;
-    border-radius: 5px;
-    background-color: #dddddd;
-    padding: 2px 6px;
-    margin: 3px auto; }
+body {
+  background-color: #646ea5; }
 
 /*# sourceMappingURL=test.css.map */
