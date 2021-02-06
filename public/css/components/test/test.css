@@ -8,10 +8,10 @@ body {
 
 .dot {
   position: absolute;
-  border: 3px solid white;
+  border: 3px solid  #aaf;
   background-color: #dddddd;
-  width: 35px;
-  height: 35px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%; }
 
 /*# sourceMappingURL=test.css.map */

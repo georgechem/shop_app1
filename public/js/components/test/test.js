@@ -4,7 +4,7 @@ let container = document.getElementById('div1');
 let balls = []
 
 
-for(i = 1; i < 330; i++){
+for(i = 1; i < 50; i++){
     let ball = document.createElement('div');
     ball.classList.add('dot');
     balls.push(ball);
@@ -35,7 +35,7 @@ function moveRight(item, x1, y1, opacity, scale){
     let offset = 200;
     let factor_y = 1;
     let factor_x = 1;
-    let width = container.offsetWidth - item.offsetWidth;
+    let width = (container.offsetWidth - item.offsetWidth-35);
     //console.log(width);
     let animate = setInterval(function(){
         if(x >= width || x < 0){
