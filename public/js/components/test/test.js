@@ -1,15 +1,8 @@
-let container = document.getElementById('div');
+let container = document.getElementById('div1');
 
 
 let balls = []
-let dot = document.createElement('div');
-dot.classList.add('dot');
-let dot1 = document.createElement('div');
-dot1.classList.add('dot');
 
-
-container.appendChild(dot);
-container.appendChild(dot1);
 
 for(i = 1; i < 330; i++){
     let ball = document.createElement('div');
@@ -20,7 +13,7 @@ for(i = 1; i < 330; i++){
 }
 balls.forEach(function(val){
     container.appendChild(val);
-    moveRight(val,Math.random()*300, Math.random()*300, Math.max(0.3, Math.random()));
+    moveRight(val,Math.random()*300, Math.random()*100, Math.max(0.3, Math.random()), Math.random());
 });
 
 /**
@@ -29,11 +22,17 @@ balls.forEach(function(val){
  * dot.style.top = '62.5px';
  dot.style.left = '62.5px';
  */
-function moveRight(item, x1, y1, opacity){
+function moveRight(item, x1, y1, opacity, scale){
     //console.log(dot);
+    let r = 0;
+    let g = 0;
+    let b = 0;
+    let r1 = 0;
+    let g1 = 0;
+    let b1 = 0;
     let x = x1;
     let y = y1;
-    let offset = 300;
+    let offset = 200;
     let factor_y = 1;
     let factor_x = 1;
     let width = container.offsetWidth - item.offsetWidth;
@@ -46,6 +45,14 @@ function moveRight(item, x1, y1, opacity){
         item.style.left = `${x}px`;
         item.style.top = `${y+offset}px`;
         item.style.opacity = opacity;
+        item.style.transform = `scale(${scale})`;
+        r1 = Math.max(Math.random()*255, 200);
+        g1 = Math.max(Math.random()*255, 200);
+        b1 = Math.max(Math.random()*255, 250);
+        r = Math.min(r1, 0);
+        g = Math.min(g1, 0);
+        b = Math.min(b1, 50);
+        item.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         x += 4*(Math.random()) * factor_x;
         y += 4*(Math.random()) * factor_y;
         if (y <= 0 || y > offset){
@@ -55,6 +62,5 @@ function moveRight(item, x1, y1, opacity){
 
     }, 10);
 }
-moveRight(dot, 20, 20, 0.8);
-moveRight(dot1, 40, 40, 1);
+
 
