@@ -1,4 +1,15 @@
 body {
   background-color: #5eb5e0; }
 
+.loader {
+  background-color: #ccc;
+  margin-top: 200px; }
+  .loader__slider {
+    display: flex; }
+    .loader__slider__block {
+      background-color: red;
+      margin: 4px;
+      width: 25px;
+      height: 25px; }
+
 /*# sourceMappingURL=test3.css.map */

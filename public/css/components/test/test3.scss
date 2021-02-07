@@ -1,3 +1,16 @@
 body {
   background-color: #5eb5e0;
 }
+.loader{
+  background-color: #ccc;
+  margin-top: 200px;
+  &__slider{
+    display: flex;
+    &__block{
+      background-color: red;
+      margin: 4px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
