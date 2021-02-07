@@ -15,7 +15,7 @@ function moveLatestRight(){
             setTimeout(runLatest, 1500);
         }
 
-    }, 4000);
+    }, 6000);
 }
 
 
