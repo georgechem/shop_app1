@@ -2,6 +2,7 @@ body {
   background-color: #646ea5; }
 
 .bestsellers {
+  margin-top: 50px;
   font-family: indie_flowerregular, serif;
   color: #115;
   font-weight: bolder;

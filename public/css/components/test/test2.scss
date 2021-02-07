@@ -3,3 +3,13 @@ body {
   margin-top: 55px;
 
 }
+.banner {
+  text-align: center;
+  position: relative;
+
+  &__img{
+   position: fixed;
+
+  }
+
+}

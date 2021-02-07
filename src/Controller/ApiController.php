@@ -13,6 +13,18 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApiController extends AbstractController
 {
     /**
+     * @Route("/getRandomBook", name="app_get_random_book", methods={"GET"})
+     */
+    public function getRandomBook(): JsonResponse
+    {
+        $result = $this->getDoctrine()->getRepository(Book::class)
+            ->getRandomBook();
+        //$project_path = $this->getParameter('kernel.project_dir');
+
+        return new JsonResponse($result);
+    }
+
+    /**
      * @Route("/googleBooks/{start}/{max}/{query}", name="app_google_books", requirements={"query"="[a-zA-Z0-9?=\+\-]+",
      *     "start"="\d+", "max"="\d{1,2}"}, methods={"GET"})
      */

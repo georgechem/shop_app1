@@ -20,6 +20,23 @@ class BookRepository extends ServiceEntityRepository
         parent::__construct($registry, Book::class);
     }
 
+    /**
+     * Repository function which return random object from database
+     * @return mixed
+     */
+    public function getRandomBook()
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            "SELECT b FROM App\Entity\Book b WHERE 1=1"
+        );
+        $result = $query->getResult();
+        $max = count($result);
+        $value = rand(0, $max);
+
+        return $result[$value]->jsonSerialize();
+    }
+
     public function getCategories()
     {
         $em = $this->getEntityManager();
