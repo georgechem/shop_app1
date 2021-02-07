@@ -4,6 +4,7 @@ $nav-icon-margin: 5px 5px 5px 5px;
 .main__menu{
   top: 0;
   position: fixed;
+  max-width: 1200px;
   width: 100%;
   z-index: 100;
 }
@@ -38,7 +39,7 @@ $nav-icon-margin: 5px 5px 5px 5px;
       height: $nav-icon-height;
       cursor: pointer;
       top: 7px;
-      right: 5px;
+      right: 6px;
     }
   }
   &__img{
