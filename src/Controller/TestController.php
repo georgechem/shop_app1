@@ -28,4 +28,18 @@ class TestController extends AbstractController
 
         ]);
     }
+
+    /**
+     * @Route("/test3", name="app_test3")
+     */
+    public function test3(): Response
+    {
+
+
+        return $this->render('test/test3.html.twig', [
+
+
+        ]);
+    }
+
 }

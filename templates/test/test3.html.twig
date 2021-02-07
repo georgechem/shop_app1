@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {#  #}
+    <link rel="stylesheet" href="{{ asset('css/components/test/test3.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<div>1</div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {#  #}
+    <script src="{{ asset('js/components/test/test3.js') }}"></script>
+
+{% endblock %}
