@@ -1,6 +1,6 @@
 .panel {
+  margin: 30px auto;
   background-color: #3a708a;
-  margin-top: 20px;
   padding: 5px 0;
   display: flex;
   flex-wrap: wrap;
