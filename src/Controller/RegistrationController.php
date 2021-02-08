@@ -42,6 +42,16 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+            /**
+             * Added ONLY for TEST purposes - create fields in registration
+             * form instead
+             */
+            $user->setFirstName('first_name');
+            $user->setLastName('last_name');
+            $user->setAddress('user_address');
+            $user->setCreatedAt(new \DateTime());
+            $user->setRoles(['ROLE_ADMIN']);
+
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
