@@ -5,7 +5,7 @@
 {% block stylesheets %}
 {{ parent() }}
 <link rel="stylesheet" href="{{ asset('css/admin/admin_panel.css') }}">
-{#  Components styles #}
+{# Ui components styles #}
     <link rel="stylesheet" href="{{ asset('css/admin/ui/side_panel.css') }}">
 {% endblock %}
 
@@ -22,5 +22,7 @@
 
     <script src="{{ asset('js/admin/admin_panel.js') }}"></script>
 
+    {# Ui components #}
+    <script src="{{ asset('js/admin/ui/side_panel.js') }}"></script>
 
 {% endblock %}
