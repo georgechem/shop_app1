@@ -2,15 +2,15 @@ body {
   background-color: #5eb5e0;
 }
 .loader{
+  position: relative;
   background-color: #ccc;
   margin-top: 200px;
   &__slider{
     display: flex;
     &__block{
+      position: absolute;
       background-color: red;
-      margin: 4px;
-      width: 25px;
-      height: 25px;
+
     }
   }
 }
