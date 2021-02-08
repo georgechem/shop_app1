@@ -85,8 +85,7 @@ class Message
 
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
-        //$this->createdAt = $createdAt;
-        $this->createdAt = new \DateTime(\DateTimeInterface::ATOM);
+        $this->createdAt = $createdAt;
 
         return $this;
     }

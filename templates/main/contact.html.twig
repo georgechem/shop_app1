@@ -12,6 +12,12 @@
 {% endblock %}
 
 {% block body %}
+
+    {% for message in app.flashes('info') %}
+    <div class="flash">
+        <div class="flash__info">{{ message }}</div>
+    </div>
+    {% endfor %}
 <div class="cForm">
     {{ form(form) }}
 </div>

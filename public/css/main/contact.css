@@ -35,4 +35,20 @@ body {
   font-family: indie_flowerregular, serif;
   font-size: 1.5rem; }
 
+.flash {
+  margin: 10px auto;
+  padding: 5px;
+  background-color: green;
+  border-radius: 5px; }
+  @media (max-width: 300px) {
+    .flash {
+      max-width: 280px; } }
+  @media (min-width: 500px) {
+    .flash {
+      max-width: 350px; } }
+  .flash__info {
+    text-align: center;
+    font-family: indie_flowerregular, serif;
+    font-size: 1.4rem; }
+
 /*# sourceMappingURL=contact.css.map */

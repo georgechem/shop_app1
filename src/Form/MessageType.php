@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Message;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -20,7 +21,7 @@ class MessageType extends AbstractType
                 'label'=> false,
                 'required' => true,
             ])
-            ->add('sender', TextType::class, [
+            ->add('sender', EmailType::class, [
                 'attr' => ['class' => 'cForm__sender mF pF bR fFS', 'placeholder'=>'Sender'],
                 'label'=> false,
                 'required' => true,

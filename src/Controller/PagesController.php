@@ -51,10 +51,26 @@ class PagesController extends AbstractController
     /**
      * @Route("/contactUs", name="app_contact_us")
      */
-    public function contactUs(): Response
+    public function contactUs(Request $request): Response
     {
         $message = new Message();
+        $message->setCreatedAt(new \DateTime());
         $form = $this->createForm(MessageType::class, $message);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $data = $form->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($data);
+            $em->flush();
+
+            $this->addFlash('info', 'Your message was sent successfully');
+
+            return $this->redirectToRoute('app_contact_us');
+
+        }
 
         return $this->render('main/contact.html.twig', [
             'form' => $form->createView(),
