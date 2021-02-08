@@ -6,10 +6,13 @@
 {{ parent() }}
 <link rel="stylesheet" href="{{ asset('css/admin/admin_panel.css') }}">
 {#  Components styles #}
-
+    <link rel="stylesheet" href="{{ asset('css/admin/ui/side_panel.css') }}">
 {% endblock %}
 
 {% block body %}
+
+    {% embed 'admin/ui/side_panel.html.twig' %}
+    {% endembed %}
 
 
 {% endblock %}
