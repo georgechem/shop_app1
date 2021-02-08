@@ -2,7 +2,7 @@
     <ul class="navUser__list">
         {% if is_granted('ROLE_ADMIN') %}
         <li class="navUser__list__item">
-            <a class="navUser__list__item--link" href="">Admin Panel</a>
+            <a class="navUser__list__item--link" href="{{ path('app_admin_panel') }}">Admin Panel</a>
         </li>
         {% endif %}
         <li class="navUser__list__item">

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('css/admin/admin_panel.css') }}">
+{#  Components styles #}
+
+{% endblock %}
+
+{% block body %}
+
+
+{% endblock %}
+
+{%  block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/admin/admin_panel.js') }}"></script>
+
+
+{% endblock %}

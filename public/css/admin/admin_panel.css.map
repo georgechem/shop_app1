@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAK;EACH,gBAAgB,EAAE,OAAO",
+"sources": ["admin_panel.scss"],
+"names": [],
+"file": "admin_panel.css"
+}
