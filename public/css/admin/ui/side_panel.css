@@ -1,3 +1,19 @@
-
+.sidePanel {
+  display: flex; }
+  .sidePanel__block {
+    background-color: #111;
+    width: 200px;
+    height: 80vh;
+    border-radius: 0 0 15px 0; }
+  .sidePanel__menu {
+    list-style: none; }
+    .sidePanel__menu__item {
+      margin: 15px 0;
+      padding: 5px;
+      background-color: #333333; }
+      .sidePanel__menu__item--link {
+        padding: 10px;
+        text-decoration: none;
+        color: #eee; }
 
 /*# sourceMappingURL=side_panel.css.map */

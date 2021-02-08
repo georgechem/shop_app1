@@ -1,0 +1,9 @@
+<div class="sidePanel">
+    <div class="sidePanel__block">
+        {% for menu_link in links %}
+        <ul class="sidePanel__menu">
+            <li class="sidePanel__menu__item"><a class="sidePanel__menu__item--link" href="">{{ menu_link[0] }}</a></li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>

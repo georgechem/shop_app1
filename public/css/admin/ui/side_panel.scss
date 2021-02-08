@@ -1,0 +1,25 @@
+
+.sidePanel {
+  display: flex;
+
+  &__block {
+    background-color: #111;
+    width: 200px;
+    height: 80vh;
+    border-radius: 0 0 15px 0;
+  }
+  &__menu {
+
+    list-style: none;
+    &__item{
+      margin: 15px 0;
+      padding: 5px;
+      background-color: #333333;
+      &--link{
+        padding: 10px;
+        text-decoration: none;
+        color: #eee;
+      }
+    }
+  }
+}
