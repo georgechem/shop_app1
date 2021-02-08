@@ -29,4 +29,10 @@ body {
     font-family: indie_flowerregular, serif;
     font-size: 1.3rem; }
 
+.block {
+  display: block; }
+
+.center {
+  text-align: center; }
+
 /*# sourceMappingURL=login.css.map */

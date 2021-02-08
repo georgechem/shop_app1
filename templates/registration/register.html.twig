@@ -2,12 +2,21 @@
 
 {% block title %}Register{% endblock %}
 
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('css/main/login.css') }}">
+{#  Components styles #}
+{% endblock %}
+
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+
+        <div class="flash__danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
+
+    <div class="form">
+
 
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
@@ -16,6 +25,16 @@
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="form__button">Register</button>
     {{ form_end(registrationForm) }}
+
+    </div>
+{% endblock %}
+
+{%  block javascripts %}
+    {{ parent() }}
+
+    {# <script src="{{ asset('js/main/login.js') }}"></script> #}
+
+
 {% endblock %}
