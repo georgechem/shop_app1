@@ -45,4 +45,16 @@ class PagesController extends AbstractController
             'category' => $results[$category_number],
         ]);
     }
+
+    /**
+     * @Route("/contactUs", name="app_contact_us")
+     */
+    public function contactUs(): Response
+    {
+        return $this->render('main/contact.html.twig', [
+
+        ]);
+
+    }
+
 }
