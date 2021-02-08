@@ -23,11 +23,13 @@ body {
     font-weight: bolder;
     min-width: 260px; }
   .form__input {
+    font-weight: bolder;
+    padding: 5px;
     border-radius: 5px;
     min-width: 260px;
     text-align: center;
     font-family: indie_flowerregular, serif;
-    font-size: 1.3rem; }
+    font-size: 1.1rem; }
 
 .block {
   display: block; }

@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
+use Symfony\Component\Mime\Crypto\SMimeSigner;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
@@ -46,25 +47,45 @@ class RegistrationController extends AbstractController
              * Added ONLY for TEST purposes - create fields in registration
              * form instead
              */
+
             $user->setFirstName('first_name');
             $user->setLastName('last_name');
             $user->setAddress('user_address');
             $user->setCreatedAt(new \DateTime());
-            $user->setRoles(['ROLE_ADMIN']);
+            //$user->setRoles(['ROLE_ADMIN']);
 
-
+            $root_path = $this->getParameter('kernel.project_dir');
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
 
+            /**
+             * ADDED for TEST PURPOSES
+             */
+            /*
+            $email = (new TemplatedEmail())
+                ->from(new Address('mailer@serverapp.eu', 'ServerApp System Mailer'))
+                ->to($user->getEmail())
+                ->subject('Please Confirm your Email')
+                ->htmlTemplate('registration/confirmation_email.html.twig');
+
+
+            $signer = new SMimeSigner($root_path.'/cert.crt', $root_path.'/cert.key');
+            $signedEmail = $signer->sign($email);*/
+
+
             // generate a signed url and email it to the user
-            $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
-                (new TemplatedEmail())
-                    ->from(new Address('mailer@serverapp.eu', 'ServerApp System Mailer'))
-                    ->to($user->getEmail())
-                    ->subject('Please Confirm your Email')
-                    ->htmlTemplate('registration/confirmation_email.html.twig')
-            );
+
+
+            $new_email = (new TemplatedEmail())
+                ->from(new Address('mailer@serverapp.eu', 'ServerApp System Mailer'))
+                ->to($user->getEmail())
+                ->subject('Please Confirm your Email')
+                ->htmlTemplate('registration/confirmation_email.html.twig');
+
+
+            $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user, $new_email);
+
             // do anything else you need here, like send an email
 
             return $guardHandler->authenticateUserAndHandleSuccess(

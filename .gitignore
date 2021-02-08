@@ -19,3 +19,5 @@
 /credentials.json
 
 /migrations
+/cert.crt
+/cert.key
