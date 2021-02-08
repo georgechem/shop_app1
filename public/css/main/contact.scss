@@ -1,3 +1,46 @@
+$bp-mobile: 300px;
+$bp-tablet: 500px;
+
 body {
   background-color: #646ea5;
+}
+.cForm {
+  text-align: center;
+  @media (max-width: $bp-mobile){
+    max-width: $bp-mobile;
+  }
+  @media (min-width: $bp-tablet){
+    max-width: 450px;
+  }
+  margin: 0 auto;
+
+  &__subject{
+    width: 90%;
+  }
+  &__sender{
+    resize: none;
+    width: 90%;
+  }
+  &__content{
+    width: 90%;
+    font-family: indie_flowerregular, serif;
+    font-size: 1.2rem;
+  }
+  &__submit{
+    width: 90%;
+  }
+
+}
+.mF{
+  margin: 3px;
+}
+.pF{
+  padding: 0 5px;
+}
+.bR {
+  border-radius: 5px;
+}
+.fFS{
+  font-family: indie_flowerregular, serif;
+  font-size: 1.5rem;
 }

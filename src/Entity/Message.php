@@ -25,7 +25,7 @@ class Message
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $addressee;
+    private $sender;
 
     /**
      * @ORM\Column(type="text")
@@ -54,14 +54,14 @@ class Message
         return $this;
     }
 
-    public function getAddressee(): ?string
+    public function getSender(): ?string
     {
-        return $this->addressee;
+        return $this->sender;
     }
 
-    public function setAddressee(string $addressee): self
+    public function setSender(string $sender): self
     {
-        $this->addressee = $addressee;
+        $this->sender = $sender;
 
         return $this;
     }
@@ -85,7 +85,8 @@ class Message
 
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
-        $this->createdAt = $createdAt;
+        //$this->createdAt = $createdAt;
+        $this->createdAt = new \DateTime(\DateTimeInterface::ATOM);
 
         return $this;
     }

@@ -1,4 +1,38 @@
 body {
   background-color: #646ea5; }
 
+.cForm {
+  text-align: center;
+  margin: 0 auto; }
+  @media (max-width: 300px) {
+    .cForm {
+      max-width: 300px; } }
+  @media (min-width: 500px) {
+    .cForm {
+      max-width: 450px; } }
+  .cForm__subject {
+    width: 90%; }
+  .cForm__sender {
+    resize: none;
+    width: 90%; }
+  .cForm__content {
+    width: 90%;
+    font-family: indie_flowerregular, serif;
+    font-size: 1.2rem; }
+  .cForm__submit {
+    width: 90%; }
+
+.mF {
+  margin: 3px; }
+
+.pF {
+  padding: 0 5px; }
+
+.bR {
+  border-radius: 5px; }
+
+.fFS {
+  font-family: indie_flowerregular, serif;
+  font-size: 1.5rem; }
+
 /*# sourceMappingURL=contact.css.map */
