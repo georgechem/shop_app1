@@ -1,0 +1,42 @@
+$bp-mobile: 300px;
+$bp-tablet: 500px;
+
+body {
+  background-color: #646ea5;
+}
+.flash{
+
+  &__danger{
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-family: indie_flowerregular, serif;
+    font-size: 1.3rem;
+    background-color: #c14141;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__label{
+    font-family: indie_flowerregular, serif;
+    font-size: 1.5rem;
+  }
+  &__button{
+    border-radius: 5px;
+    margin: 20px 0;
+    font-family: indie_flowerregular, serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    min-width: 260px;
+  }
+  &__input{
+    border-radius: 5px;
+    min-width: 260px;
+    text-align: center;
+    font-family: indie_flowerregular, serif;
+    font-size: 1.3rem;
+  }
+
+}
