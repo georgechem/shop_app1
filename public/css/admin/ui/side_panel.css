@@ -1,8 +1,15 @@
 .sidePanel {
-  display: flex; }
+  display: flex;
+  position: relative; }
+  .sidePanel__button--close {
+    margin-top: 20px;
+    width: 48px;
+    filter: grayscale(100%);
+    cursor: pointer; }
   .sidePanel__block {
+    text-align: center;
     background-color: #111;
-    width: 200px;
+    width: 275px;
     height: 80vh;
     border-radius: 0 0 15px 0; }
   .sidePanel__menu {
@@ -12,8 +19,22 @@
       padding: 5px;
       background-color: #333333; }
       .sidePanel__menu__item--link {
+        font-family: indie_flowerregular, serif;
+        font-size: 2rem;
+        text-transform: uppercase;
         padding: 10px;
         text-decoration: none;
         color: #eee; }
+
+.left {
+  display: none;
+  visibility: hidden; }
+
+.button {
+  display: flex;
+  position: relative; }
+  .button__open {
+    width: 48px;
+    cursor: pointer; }
 
 /*# sourceMappingURL=side_panel.css.map */

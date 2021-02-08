@@ -1,5 +1,10 @@
-<div class="sidePanel">
+<div id="button_open" class="button">
+    <img class="button__open" src="{{ asset('img/nav/switch--off.svg') }}">
+</div>
+
+<div id="side_panel" class="sidePanel left">
     <div class="sidePanel__block">
+        <img id="button_close" class="sidePanel__button--close" src="{{ asset('img/nav/crossoctagon.svg') }}">
         {% for menu_link in links %}
         <ul class="sidePanel__menu">
             <li class="sidePanel__menu__item"><a class="sidePanel__menu__item--link" href="">{{ menu_link[0] }}</a></li>

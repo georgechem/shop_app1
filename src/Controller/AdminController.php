@@ -19,7 +19,7 @@ class AdminController extends AbstractController
      */
     public function index(): Response
     {
-        $links = [['link_1'],['link_2'], ['link_3']];
+        $links = [['link_1'],['link_2'], ['link_3'], ['ink_4']];
 
         return $this->render('admin/index.html.twig', [
             'links' => $links,
